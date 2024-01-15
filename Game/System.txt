@@ -1,0 +1,11 @@
+SV
+Path_sv_1
+Save_test_1.txt
+Path_sv_2
+Game_save_N.txt
+Path_sv_3
+Game_save_N.txt
+AU
+1
+LD
+1
