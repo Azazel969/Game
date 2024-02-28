@@ -765,7 +765,7 @@ void Game::Update()
 				if (namberClass != '4')
 				{
 					tempCharacter = CreateCharacter(player, namberClass);
-					std::cout << " Вы уверены в всвоем выборе?  y/n" << std::endl;
+					std::cout << " Вы уверены в в своем выборе?  y/n" << std::endl;
 
 					charInput = input_registration.Click_tracking(charInput);
 
@@ -838,7 +838,7 @@ Character Game::CreateCharacter(Character& player, char tempCharacter)
 {
 	bool isRanning = true;
 
-	// переменная перевыбора класса
+	// переменная пере выбора класса
 	//char Input;
 
 	while (isRanning)

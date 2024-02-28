@@ -15,15 +15,15 @@ struct Actions
 
 	bool Drop_item = false;// можно взять вещь из мира
 
-	bool Alert_attr = false;// уведомление о изменнении характеристик
+	bool Alert_attr = false;// уведомление о изменении характеристик
 
 	bool No_travel = false;// нет возможности путешествовать
 
 	bool Travel = false;// путешествовать
 
-	bool Fire_off = false;// потушить выкел
+	bool Fire_off = false;// потушить факел
 
-	bool Fire_on = false;// зажеч факел
+	bool Fire_on = false;// зажечь факел
 
 	bool Load_save = false;// сохранение
 

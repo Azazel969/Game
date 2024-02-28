@@ -87,7 +87,7 @@ struct Abilitys
 	int Int_Xp_ability_2 = 1;
 	std::string Description_ability_2 = " С яростным воплем бросаетесь на врага. На 1 ход повышает урон на Х кол-во"; 
 
-	std::string Name_ability_3 = " Боевая тойка";
+	std::string Name_ability_3 = " Боевая cтойка";
 	int Int_ability_3 = 0;
 	int Int_levl_ability_3 = 1;
 	int Int_Xp_ability_3 = 1;

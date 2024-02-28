@@ -26,7 +26,7 @@ void Files::Load_File()
 
 				if (!fout.is_open())
 				{
-					std::cout << "Ошибка окрытия файла (System.txt)" << std::endl;
+					std::cout << "Ошибка открытия файла (System.txt)" << std::endl;
 					system("pause");
 				}
 				else
@@ -45,7 +45,7 @@ void Files::Load_File()
 
 				if (!fout.is_open())
 				{
-					std::cout << "Ошибка окрытия файла (Game_save.txt)" << std::endl;
+					std::cout << "Ошибка открытия файла (Game_save.txt)" << std::endl;
 					system("pause");
 				}
 				else
