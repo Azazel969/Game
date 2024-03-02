@@ -279,7 +279,7 @@ void Character::CreateInventiry(int Option)
 			}
 		}
 	}
-	else if (Option == 2) // заполнение в тестовов варианте
+	else if (Option == 2) // заполнение в тестовом варианте
 	{
 		bool While = true;
 		bool If = true;

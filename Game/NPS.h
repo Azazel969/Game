@@ -62,7 +62,7 @@ private:
 
 //struct Forester_Inventory // инвентарь
 //{
-//	// размер инвентaря
+//	// размер инвентаря
 //	static constexpr int inventoryPage = 4; // страница
 //	static constexpr int width = 10; // X
 //	static constexpr int height = 10; // Y

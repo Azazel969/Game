@@ -500,7 +500,7 @@ void Game::Settings()
 		system("CLS");
 		std::cout << "1. Изменение способа ввода" << std::endl;
 		std::cout << "2. >Изменение символов< не работает по причине ввода enum" << std::endl;
-		std::cout << "3. Востановить карту" << std::endl;
+		std::cout << "3. Восстановить карту" << std::endl;
 		std::cout << "4. Выйти из настроек" << std::endl;
 
 		UserInput = input_registration.Click_tracking(UserInput);
@@ -761,10 +761,10 @@ void Game::Update()
 			bool B_While = true;
 			do
 			{
-				namberClass = GetUserInput(namberClass);
-				if (namberClass != '4')
+				numberClass = GetUserInput(numberClass);
+				if (numberClass != '4')
 				{
-					tempCharacter = CreateCharacter(player, namberClass);
+					tempCharacter = CreateCharacter(player, numberClass);
 					std::cout << " Вы уверены в в своем выборе?  y/n" << std::endl;
 
 					charInput = input_registration.Click_tracking(charInput);
@@ -797,7 +797,7 @@ void Game::Update()
 	}
 }
 
-char Game::GetUserInput(char namberClass)
+char Game::GetUserInput(char numberClass)
 {
 
 	bool revisionClassNumber = true;
@@ -806,25 +806,25 @@ char Game::GetUserInput(char namberClass)
 	{
 		system("CLS");
 		std::cout << std::endl;
-		std::cout << " Выберие класс персонажа" << std::endl;
+		std::cout << " Выберите класс персонажа" << std::endl;
 		std::cout << " 1. Воин" << " 2. Маг" << " 3. Охотник"<< " 4. Назад в главное меню" << std::endl;
 
-		namberClass = input_registration.Click_tracking(namberClass);
+		numberClass = input_registration.Click_tracking(numberClass);
 		 
-		switch (namberClass)
+		switch (numberClass)
 		{
 		case '1':
 			revisionClassNumber = false;
-			return namberClass;
+			return numberClass;
 		case '2':
 			revisionClassNumber = false;
-			return namberClass;
+			return numberClass;
 		case '3':
 			revisionClassNumber = false;
-			return namberClass;
+			return numberClass;
 		case '4':
 			revisionClassNumber = false;
-			return namberClass;
+			return numberClass;
 		default:
 			std::cout << " Введите номер нужного вам класса или 4 для выхода из меню выбора персонажа " << std::endl;
 			system("pause");
@@ -1232,7 +1232,7 @@ void Actions::Options_actions(bool BL_Drop_Item, int Stamina, bool Alert, bool O
 
 	if (Bl_Passage)
 	{
-		std::cout << " Перейти в новую облость (G)" << std::endl;
+		std::cout << " Перейти в новую область (G)" << std::endl;
 
 		if (return_village)
 		{
@@ -1404,11 +1404,11 @@ void Game::Game_print_Gameplay(Character& player)
 
 void Game::GameMenu()
 {
-	bool RaningGameMenu = true;
+	bool RunningGameMenu = true;
 
 	char input = NULL;
 
-	while (RaningGameMenu)
+	while (RunningGameMenu)
 	{
 		system("CLS");
 		std::cout << std::endl;
@@ -1428,12 +1428,12 @@ void Game::GameMenu()
 		if (input == '1')
 		{
 			system("CLS");
-			RaningGameMenu = false;
+			RunningGameMenu = false;
 		}
 		else if (input == '2')
 		{
 			bool inventory = true;
-			int namberItem;
+			int numberItem;
 			int quantity;
 
 			char UserInput = NULL;
@@ -1442,7 +1442,7 @@ void Game::GameMenu()
 			{
 				system("CLS");
 				std::cout << "1. Изменение символов" << std::endl;
-				std::cout << "2. Востановить карту" << std::endl;
+				std::cout << "2. Восстановить карту" << std::endl;
 				std::cout << "3. > inventory <"  << std::endl;
 				std::cout << "4. Бестиарий" << std::endl;
 				std::cout << "5. Выйти из настроек" << std::endl;
@@ -1500,10 +1500,10 @@ void Game::GameMenu()
 
 							std::cout << " Введите номер предмета и его количество" << std::endl;
 
-							std::cout << " NamberItem: "; std::cin >> namberItem;
+							std::cout << " NumberItem: "; std::cin >> numberItem;
 							std::cout << "\n Quantity: "; std::cin >> quantity;
 
-							player.InItemsInventory(namberItem, quantity);
+							player.InItemsInventory(numberItem, quantity);
 						}
 						else if (UserInput != ' ')
 						{
@@ -1546,9 +1546,9 @@ void Game::GameMenu()
 						if (UserInput == '1')
 						{
 							std::cout << " Введите номер предмета " << std::endl;
-							std::cout << " Номер: "; std::cin >> namberItem;
+							std::cout << " Номер: "; std::cin >> numberItem;
 							std::cout << std::endl;
-							player.OutItemsInventory(namberItem);
+							player.OutItemsInventory(numberItem);
 							UserInput = ' ';
 						}
 						else if (UserInput == '2')
@@ -1607,7 +1607,7 @@ void Game::GameMenu()
 			isGameStarted = false;
 			isPlayerDie = false;
 			bat.PlayerDie = false;
-			RaningGameMenu = false;
+			RunningGameMenu = false;
 		}
 		else
 		{

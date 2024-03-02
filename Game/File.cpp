@@ -26,7 +26,8 @@ void Files::Load_File()
 
 				if (!fout.is_open())
 				{
-					std::cout << "Ошибка открытия файла (System.txt)" << std::endl;
+					OpenError();
+					std::cout << "(System.txt)" << std::endl;
 					system("pause");
 				}
 				else
@@ -45,7 +46,8 @@ void Files::Load_File()
 
 				if (!fout.is_open())
 				{
-					std::cout << "Ошибка открытия файла (Game_save.txt)" << std::endl;
+					OpenError();
+					std::cout << "(Game_save.txt)" << std::endl;
 					system("pause");
 				}
 				else
@@ -76,7 +78,7 @@ void Files::Working_file(int action, int File, char Slot_save, Character& player
 	{
 		char _slot_sv_ = '0';
 		std::cout << " Программа не смогла получить номер слота сохранения" << std::endl;
-		std::cout << " введите номер(int) вручную (не ошибитесь, это может сказаться на стабильности пррограммы):" << std::endl;
+		std::cout << " введите номер(int) вручную (не ошибитесь, это может сказаться на стабильности программы):" << std::endl;
 		std::cout << " при не корректном вводе, выполнение продолжится со слотом номер 1" << std::endl;
 		std::cin >> _slot_sv_;
 
@@ -143,7 +145,8 @@ void Files::Read(Character& player, Input_registration& input_registration, int 
 
 		if (!fin.is_open())
 		{
-			std::cout << "Ошибка окрытия файла (" << Path << ")" << std::endl;
+			OpenError();
+			std::cout << "(" << Path << ")" << std::endl;
 			system("pause");
 		}
 		else
@@ -346,7 +349,8 @@ void Files::Read(Character& player, Input_registration& input_registration, int 
 
 		if (!fin.is_open())
 		{
-			std::cout << "Ошибка окрытия файла (" << Path << ")" << std::endl;
+			OpenError();
+			std::cout << "(" << Path << ")" << std::endl;
 			system("pause");
 		}
 		else
@@ -516,7 +520,7 @@ void Files::Write(Character& player, Input_registration& input_registration, int
 
 		if (!fout.is_open())
 		{
-			std::cout << "Ошибка окрытия файла (System.txt)" << std::endl;
+			std::cout << " (System.txt)" << std::endl;
 			system("pause");
 		}
 		else
@@ -575,7 +579,8 @@ void Files::Write(Character& player, Input_registration& input_registration, int
 
 		if (!fout.is_open())
 		{
-			std::cout << "Ошибка окрытия файла (Game_save.txt)" << std::endl;
+			OpenError();
+			std::cout << " (Game_save.txt)" << std::endl;
 			system("pause");
 		}
 		else
@@ -636,7 +641,8 @@ void Files::Clean_file(int File, char Slot_sv)
 
 		if (!fout.is_open())
 		{
-			std::cout << "Ошибка окрытия файла (System.txt)" << std::endl;
+			OpenError();
+			std::cout << " (System.txt)" << std::endl;
 			system("pause");
 		}
 		else
@@ -713,7 +719,8 @@ void Files::Clean_file(int File, char Slot_sv)
 
 		if (!fout.is_open())
 		{
-			std::cout << "Ошибка окрытия файла + " << Path << std::endl;
+			OpenError();
+			std::cout << Path << std::endl;
 			system("pause");
 		}
 		else
@@ -755,6 +762,11 @@ void Files::Clean_file(int File, char Slot_sv)
 	default:
 		break;
 	}
+}
+
+void Files::OpenError()
+{
+	std::cout << "Ошибка открытия файла: ";
 }
 
 void Files::File_name(char Namber_file)
@@ -827,3 +839,4 @@ bool File_save_name::Create_name(std::string& path_sv_DEF, char Namber_file)
 		return false;
 	}
 }
+

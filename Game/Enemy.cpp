@@ -139,7 +139,7 @@ void Enemy::CreateEnemy(Enemy& enemy)
 				goblin_shamanAttributes.enamyAvoid = 20;
 				goblin_shamanAttributes.enemyName = " Гоблин-шаман";
 				goblin_shamanAttributes.enamyElement = enemy.Enemy_Attrbutes.All;
-				goblin_shamanAttributes.enamyElement_txt = " Имеет благославление Духа Гаии";
+				goblin_shamanAttributes.enamyElement_txt = " Имеет благословление Духа Гайи";
 				goblin_shamanAttributes.enamyNumber = NumberEnemy;
 				Enemy Goblin_Shaman(goblin_shamanAttributes);
 
@@ -357,7 +357,7 @@ void Enemy::CreateEnemy(Enemy& enemy)
 				goblin_kingAttributes.enamyAvoid = 40;
 				goblin_kingAttributes.enemyName = " Король гоблинов";
 				goblin_kingAttributes.enamyElement = enemy.Enemy_Attrbutes.All;
-				goblin_kingAttributes.enamyElement_txt = " Имеет благославление Духа Гаии";
+				goblin_kingAttributes.enamyElement_txt = " Имеет благословление Духа Гайи";
 				goblin_kingAttributes.enamyNumber = NumberEnemy;
 				Enemy Goblin_king(goblin_kingAttributes);
 
@@ -908,7 +908,7 @@ void Enemy::PrintEnemyStats()
 	{
 		std::cout << std::endl;
 		std::cout << Enemy_Attrbutes.enamyElement_txt << std::endl;
-		std::cout << " тестовый обЪект" << std::endl;
+		std::cout << " тестовый объект" << std::endl;
 	}
 	std::cout << std::endl;
 	std::cout << "* Характеристики *" << std::endl;

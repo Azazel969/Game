@@ -180,8 +180,8 @@
 				}
 			}
 		}
-		player._PlayerAttributes._SystemParam._Position.World = "Восточная облость";
-		Current_World = "Восточная облость";
+		player._PlayerAttributes._SystemParam._Position.World = "Восточная область";
+		Current_World = "Восточная область";
 	}
 	else if (Int_Current_World == 6)
 	{
@@ -208,8 +208,8 @@
 				}
 			}
 		}
-		player._PlayerAttributes._SystemParam._Position.World = "Юго-восточная облость";
-		Current_World = "Юго-восточная облость";
+		player._PlayerAttributes._SystemParam._Position.World = "Юго-восточная область";
+		Current_World = "Юго-восточная область";
 	}
 	else if (Int_Current_World == 7)
 	{
@@ -236,7 +236,7 @@
 				}
 			}
 		}
-		player._PlayerAttributes._SystemParam._Position.World = "Южная облость";
+		player._PlayerAttributes._SystemParam._Position.World = "Южная область";
 		Current_World = "Южная область";
 	}
 	else if (Int_Current_World == 8)
@@ -292,7 +292,7 @@
 				}
 			}
 		}
-		player._PlayerAttributes._SystemParam._Position.World = "Центрральная область";
+		player._PlayerAttributes._SystemParam._Position.World = "Центральная область";
 		Current_World = "Центральная область";
 	}
 	else if (Int_Current_World == 10)
@@ -866,8 +866,8 @@ void Map::Erasing_last_step(int Cordinate_X, int Cordinate_Y)
 
 void Map::MapOverview(int PlayerX, int PlayerY)
 {
-	int SavePlayerX = PlayerX;// сохранение кордтнат персонажа X
-	int SavePlayerY = PlayerY;// сохранение кордтнат персонажа Y
+	int SavePlayerX = PlayerX;// сохранение координат персонажа X
+	int SavePlayerY = PlayerY;// сохранение координат персонажа Y
 
 	int CordinateOpenAreaX = SavePlayerX;// координаты открытой обл относительно персонажа X
 	int CordinateOpenAreaY = SavePlayerY;// координаты открытой обл относительно персонажа Y
@@ -1058,8 +1058,8 @@ char Map::Simbol()
 		char UserInput = ' ';
 		system("CLS");
 		std::cout << " 1. Символ стены"<< std::endl;
-		std::cout << " 2. Символ темной облости"<< std::endl;
-		std::cout << " 3. Символ светлой облости" << std::endl;
+		std::cout << " 2. Символ темной области"<< std::endl;
+		std::cout << " 3. Символ светлой области" << std::endl;
 		std::cout << " 4. Символ персонажа" << std::endl;
 		std::cout << " 5. Символ врага" << std::endl;
 		std::cout << " 6. Выход из настроек символов" << std::endl;
@@ -1248,7 +1248,7 @@ void World::Next_world(Character& player)
 		}
 		else if (village.Village_region == 2)//центральный регион
 		{
-			if (x == 44 && y == 1 || x == 1 && y == 10 || x == 17 && y == 23) // 1й регеон три прохода (2 -> 1)
+			if (x == 44 && y == 1 || x == 1 && y == 10 || x == 17 && y == 23) // 1й регион три прохода (2 -> 1)
 			{
 				Passage = true;
 			}
@@ -1542,7 +1542,7 @@ void World::Moving_next_world(Character& player)
 				x = 43;
 				y = 6;
 			}
-			else if (x == 49 && y == 10 || x == 49 && y == 13 || x == 49 && y == 17) // 2й регеон три прохода (1 -> 2)
+			else if (x == 49 && y == 10 || x == 49 && y == 13 || x == 49 && y == 17) // 2й регион три прохода (1 -> 2)
 			{
 				Int_Last_World = 10;
 				village.Village_region = 2;
@@ -1594,7 +1594,7 @@ void World::Moving_next_world(Character& player)
 		}
 		else if (village.Village_region == 2)// центральный район
 		{
-			if (x == 44 && y == 1 || x == 1 && y == 10 || x == 17 && y == 23) // 1й регеон три прохода (2 -> 1)
+			if (x == 44 && y == 1 || x == 1 && y == 10 || x == 17 && y == 23) // 1й регион три прохода (2 -> 1)
 			{
 				Int_Last_World = 10;
 				village.Village_region = 1;

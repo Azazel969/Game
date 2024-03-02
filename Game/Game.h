@@ -114,7 +114,7 @@ private:
 
 	// игровой процесс
 	void Game_print_Gameplay(Character& player);
-	// нoмер класса
+	// номе класса
 	char GetUserInput(char UserIn);
 	// создание персонажа
 	Character CreateCharacter(Character& player, char UserIn = '0');
@@ -126,7 +126,7 @@ private:
 	bool bestiaryRan = false;
 
 	// выбор номера персонажа
-	char namberClass = 0;
+	char numberClass = 0;
 
 public:
 
@@ -161,7 +161,7 @@ private:
 
 	Map map; /// <summary>Объект: Карта </summary>
 
-	Input_registration input_registration;/// <summary>Объект: Оброботчик нажатия </summary>
+	Input_registration input_registration;/// <summary>Объект: Обработчик нажатия </summary>
 
 	Files files; /// <summary>Объект: Сохранение</summary>
 

@@ -119,20 +119,25 @@ private:
 	Character player; /// <summary>Объект: Игровой персонаж </summary>
 
 	/// <summary> Чтение из файла </summary>
-	/// <param name="File - вид файла 1 - ситемный файл, 2 - файлы сохранения(Slot_sv =! 0) (0 - все файлы)"></param>
+	/// <param name="File - вид файла 1 - системный файл, 2 - файлы сохранения(Slot_sv =! 0) (0 - все файлы)"></param>
 	void Read(Character& player, Input_registration& input_registration, int File);
 
 	/// <summary> Запись в файл </summary>
-	/// <param name="File - вид файла 1 - ситемный файл, 2 - файлы сохранения(Slot_sv =! 0) (0 - все файлы)"></param>
+	/// <param name="File - вид файла 1 - системный файл, 2 - файлы сохранения(Slot_sv =! 0) (0 - все файлы)"></param>
 	/// <param name="Slot_sv - номер слота сохранения"></param>
 	void Write(Character& player, Input_registration& input_registration, int File, char Slot_sv);
 
 	/// <summary>
 	/// очистка файлов/первое заполнение
 	/// </summary>
-	/// <param name="File - вид файла 1 - ситемный файл, 2 - файлы сохранения(Slot_sv =! 0) (0 - все файлы)"></param>
+	/// <param name="File - вид файла 1 - системный файл, 2 - файлы сохранения(Slot_sv =! 0) (0 - все файлы)"></param>
 	/// <param name="Slot_sv - номер слота сохранения"></param>
 	void Clean_file(int File, char Slot_sv);
+
+	/// <summary>
+	/// ошибка открытия файла
+	/// </summary>
+	void OpenError();
 
 	/// <summary>
 	/// чтение

@@ -25,9 +25,9 @@ struct EnemyDrops
 
 	int Quantity_drop_gold = 1; // золото выпавшее с врага
 
-	int  Quantity_drop_xp_skill;// эсенция опыта скил
+	int  Quantity_drop_xp_skill;// эсенция опыта скила
 	
-	int  Quantity_drop_xp_ability;// эсенция опыта абилка
+	int  Quantity_drop_xp_ability;// эсенция опыта абилки
 
 	std::string Name_drops_potion; // дроп зелья
 	int Number_drop_potion;// его номер(по функции OutNameItem(№ предмета))
@@ -73,7 +73,7 @@ struct EnemyAttribute
 	int enamyAttack = 30;
 	int enamyAvoid; // уклонение
 	std::string enamyElement_txt;// Элемент элементаля
-	int enamyElement; // числовое предстовление элемента
+	int enamyElement; // числовое представление элемента
 
 	enum Element 
 	{
@@ -106,7 +106,7 @@ public:
 	void MobDrops(Enemy& enemy, Character& player);
 	// выбор дропа
 	void СhoiceDrop(Character& player);
-	//функция возврвщения аттрибутов врага
+	//функция возвращения атрибутов врага
 	EnemyAttribute GetAttributesE() const;
 	// дроп (параметры)
 	EnemyDrops GetEnemyDrops() const;

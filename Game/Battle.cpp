@@ -59,7 +59,7 @@ void Battle::Size_Console()
 	}
 }
 
-void Battle::Victory() // 2е функции на отрисовку картинки при победе или протгрыше 
+void Battle::Victory() // 2е функции на отрисовку картинки при победе или проигрыше 
 {
 
 	if (x_console == 42 && y_console == 146)
@@ -206,7 +206,7 @@ void Battle::battle(Character& player, Enemy& enemy)
 					if (EnemyDie)
 					{
 						system("CLS");
-						std::cout << " Вы стоите над телом поверженого врага" << std::endl;
+						std::cout << " Вы стоите над телом поверженного врага" << std::endl;
 						//std::cout << " Осмотреть место битвы на наличие вещей почившего? или побыстрее уйти в надежде что никто вас не услышал?" << std::endl;
 						std::cout << " Посмотреть убитого(E)   Уйти(G)" << std::endl;
 						UserInput = input_registration.Click_tracking(UserInput);
@@ -318,7 +318,7 @@ void Battle::FidhtOverview(Character& player, Enemy& enemy)
 
 				if (odds > 5 && odds <= 10)
 				{
-					std::cout << " Но к сожелению вы ушли не достаточно далеко" << std::endl;
+					std::cout << " Но к сожалению вы ушли не достаточно далеко" << std::endl;
 					std::cout << enemy.Enemy_Attrbutes.enemyName << " вас заметил, но вы этого не знаете..." << std::endl;
 					detecred_player = true;
 					detecred_enemy = false;
@@ -327,7 +327,7 @@ void Battle::FidhtOverview(Character& player, Enemy& enemy)
 				}
 				else if (odds > 1 && odds <= 5)
 				{
-					std::cout << " Ведь вам удолось уйти не привлекая внимания" << std::endl;
+					std::cout << " Ведь вам удалось уйти не привлекая внимания" << std::endl;
 					detecred_enemy = false;
 					detecred_player = false;
 					enemy_aggression = false;
@@ -394,11 +394,11 @@ void Battle::Fight(Character& player, Enemy& enemy)
 
 	if (enemy.Enemy_Attrbutes.enamyElement >= 1 && enemy.Enemy_Attrbutes.enamyElement <= 4)
 	{
-		std::cout << " Cтихия: " << enemy.Enemy_Attrbutes.enamyElement_txt << std::endl;
+		std::cout << " Стихия: " << enemy.Enemy_Attrbutes.enamyElement_txt << std::endl;
 	}
 	else if (enemy.Enemy_Attrbutes.enamyElement == 0)
 	{
-		std::cout << " Cтихии " << enemy.Enemy_Attrbutes.enamyElement_txt << std::endl;
+		std::cout << " Стихии " << enemy.Enemy_Attrbutes.enamyElement_txt << std::endl;
 	}
 	else if (enemy.Enemy_Attrbutes.enamyElement == 5)
 	{

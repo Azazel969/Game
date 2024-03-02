@@ -279,7 +279,7 @@ struct World
 	int tileMap_south_west_2[Rows][Cols];// юг / запад (8)
 	void Build_map_south_west_2();
 
-	int tileMap_centre_0[Rows][Cols];// центер (9)
+	int tileMap_centre_0[Rows][Cols];// центр (9)
 	void Build_map_centre_0();
 
 	int tileMap[Rows][Cols];// текущий мир
@@ -305,7 +305,7 @@ public:
 	Map();
 
 	/// <summary>
-	/// пероначальное заполнение массивов карт
+	/// первоначальное заполнение массивов карт
 	/// </summary>
 	void Map_set();
 
@@ -348,7 +348,7 @@ private:
 	void Tracking_Move(int direction);
 
 	/// <summary>
-	/// затерание позиции прошлого хода
+	/// затирание позиции прошлого хода
 	/// </summary>
 	/// <param name="Cordinate_X"></param>
 	/// <param name="Cordinate_Y"></param>

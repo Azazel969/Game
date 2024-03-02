@@ -58,7 +58,7 @@ struct Skills
 	int Int_skill_1 = 0; // номер навыка 1
 	int Int_levl_skill_1 = 1; // уровень навыка
 	int Int_Xp_skill_1 = 1;
-	std::string Description_skill_1 = " Позволяет драться с низкой выносливотью"; // описание навыка 1
+	std::string Description_skill_1 = " Позволяет драться с низкой выносливостью"; // описание навыка 1
 	
 	std::string Name_skill_2 = " Племенной бычок"; 
 	int Int_skill_2 = 0; 
@@ -87,7 +87,7 @@ struct Abilitys
 	int Int_Xp_ability_2 = 1;
 	std::string Description_ability_2 = " С яростным воплем бросаетесь на врага. На 1 ход повышает урон на Х кол-во"; 
 
-	std::string Name_ability_3 = " Боевая cтойка";
+	std::string Name_ability_3 = " Боевая стойка";
 	int Int_ability_3 = 0;
 	int Int_levl_ability_3 = 1;
 	int Int_Xp_ability_3 = 1;
@@ -145,12 +145,12 @@ struct SystemParam
 	bool Load_save = false;
 
 	/// <summary>
-	/// структура с информацией об этолонном значении характеристик персонажа
+	/// структура с информацией об эталонном значении характеристик персонажа
 	/// </summary>
 	StorageAttributesg _StorageAttributes;
 
 	/// <summary>
-	/// струкрура с информацией о позиции героя
+	/// структура с информацией о позиции героя
 	/// </summary>
 	Position _Position;
 };
@@ -183,12 +183,12 @@ struct PlayerAttributes
 	PlayerInventory _Inventory;
 
 	/// <summary>
-	/// структура с информицией о надетых на герое вещей
+	/// структура с информацией о надетых на герое вещей
 	/// </summary>
 	PlayerSet _PlayerSet;
 
 	/// <summary>
-	/// структура с информацоей об навыках героя
+	/// структура с информацией об навыках героя
 	/// </summary>
 	Skills _Skills;
 
@@ -245,7 +245,7 @@ public:
 	// Вывод статов одежды
 	void PrintSetStats();      //  придумать статы
 	 
-	// функция возвращения аттрибутов персонажа
+	// функция возвращения атрибутов персонажа
 	PlayerAttributes GetAttributesP() const;
 	// пример записи
 	/*
@@ -253,7 +253,7 @@ public:
 	warriorAttributes.P_Hp = ???;
 	*/
 
-	// Функция возвращения аттрибутов одежды
+	// Функция возвращения атрибутов одежды
 	PlayerSet GetSetAttributes() const;
 	// пример записи
 	/*
@@ -266,23 +266,23 @@ public:
 	/// </summary>
 	void Player_Windows();
 
-	// востоновление характеристик во время отдыха
+	// восстановление характеристик во время отдыха
 	void Restore_attributes();
 
-	// Функция символьного вывода хараткеристик
+	// Функция символьного вывода характеристик
 	void SimbolOutAttr();                                // написать функцию вывода
 
 	/// <summary>
 	/// Позиция персонажа Х
 	/// </summary>
-	/// <param name=" 0 - получить заначение, х!= 0 запишет значение (х) в переменную позиции по х"></param>
+	/// <param name=" 0 - получить значение, х!= 0 запишет значение (х) в переменную позиции по х"></param>
 	int Get_player_position_X(int x = 0);
 	
 	
 	/// <summary>
 	/// Позиция персонажа Y
 	/// </summary>
-	/// <param name=" 0 - получить заначение, у!= 0 запишет значение (у) в переменную позиции по у"></param>
+	/// <param name=" 0 - получить значение, у!= 0 запишет значение (у) в переменную позиции по у"></param>
 	int Get_player_position_Y(int y = 0);  
 	
 	// текущий мир
@@ -317,7 +317,7 @@ public:
 
 	PlayerAttributes _PlayerAttributes;
 
-	// Вариант создания инвентаря (0 - ресет; 1 - объявление элементов; 2 - заполнение в тестовов варианте)
+	// Вариант создания инвентаря (0 - ресет; 1 - объявление элементов; 2 - заполнение в тестовом варианте)
 	int Option;
 	
 private:
