@@ -25,9 +25,9 @@ struct EnemyDrops
 
 	int Quantity_drop_gold = 1; // золото выпавшее с врага
 
-	int  Quantity_drop_xp_skill;// эсенция опыта скила
+	int  Quantity_drop_xp_skill;// эссенция опыта скила
 	
-	int  Quantity_drop_xp_ability;// эсенция опыта абилки
+	int  Quantity_drop_xp_ability;// эссенция опыта абилки
 
 	std::string Name_drops_potion; // дроп зелья
 	int Number_drop_potion;// его номер(по функции OutNameItem(№ предмета))
@@ -127,5 +127,7 @@ public:
 private:
 	// тестовый прогон для подсчета enamy
 	bool test = true;
+
+	Character player;
 
 };
