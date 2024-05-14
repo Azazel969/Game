@@ -926,11 +926,9 @@ void Enemy::PrintEnemyStats()
 void Enemy::СhoiceDrop(Character& player)
 {
 	char in = ' ';
-	
-	int choiseDrop = 0;// возможный дроп
+	int choiseDrop = 0;
 
-
-	// деньга +
+	// деньга
 	// 
 	// + навыкам
 	// if
@@ -939,7 +937,7 @@ void Enemy::СhoiceDrop(Character& player)
 	//дроп
 	//дроп
 
-	player._PlayerAttributes._Inventory.many = +10;
+
 
 
 
@@ -956,7 +954,7 @@ void Enemy::СhoiceDrop(Character& player)
 
 //////////////
 
-	///*srand(time(NULL));
+	/*srand(time(NULL));
 	choiseDrop = 1 + rand() % 8;
 	std::cout << "тестовая запись: " << choiseDrop << std::endl;
 	std::cout << " В останках существа вы ";
@@ -1047,9 +1045,9 @@ void Enemy::СhoiceDrop(Character& player)
 	}
 
 	choiseDrop = 0;
-}//*/
+}*/
 //////////////
-
+}
 
 void Enemy::MobDrops(Enemy& enemy, Character& player)
 {
@@ -1060,27 +1058,27 @@ void Enemy::MobDrops(Enemy& enemy, Character& player)
 	{
 	case 1:
 		
-		 /*элементаль*/
-		player.OutNameItem(1); // зелье маны
-		Enemy_Attrbutes.Enemy_Drop.Name_Possible_C1_Drops_1 = player.Item_attr.NameItem;
-		Enemy_Attrbutes.Enemy_Drop.Number_Possible_C1_Drop_1 = player.Item_attr.NumberItem;
-		player.OutNameItem(2); // зелье здоровья
-		Enemy_Attrbutes.Enemy_Drop.Name_Possible_C2_Drops_1 = player.Item_attr.NameItem;
-		Enemy_Attrbutes.Enemy_Drop.Number_Possible_C2_Drop_1 = player.Item_attr.NumberItem;
-		player.OutNameItem(3); // зелье выносливости
-		Enemy_Attrbutes.Enemy_Drop.Name_Possible_C3_Drops_1 = player.Item_attr.NameItem;
-		Enemy_Attrbutes.Enemy_Drop.Number_Possible_C3_Drop_1 = player.Item_attr.NumberItem;
-		
-		player.OutNameItem(4); // зелье урона
-		Enemy_Attrbutes.Enemy_Drop.Name_Possible_S1_Drops_1 = player.Item_attr.NameItem;
-		Enemy_Attrbutes.Enemy_Drop.Number_Possible_S1_Drop_1 = player.Item_attr.NumberItem;
-		player.OutNameItem(5);// зелье невидимости
-		Enemy_Attrbutes.Enemy_Drop.Name_Possible_S2_Drops_1 = player.Item_attr.NameItem;
-		Enemy_Attrbutes.Enemy_Drop.Number_Possible_S2_Drop_1 = player.Item_attr.NumberItem;
-		
-		player.OutNameItem(6);// зелье урона
-		Enemy_Attrbutes.Enemy_Drop.Name_Possible_G1_Drops_1 = player.Item_attr.NameItem;
-		Enemy_Attrbutes.Enemy_Drop.Number_Possible_G1_Drop_1 = player.Item_attr.NumberItem;
+		// элементаль
+		//player.OutNameItem(1); // зелье маны
+		//Enemy_Attrbutes.Enemy_Drop.Name_Possible_C1_Drops_1 = player.Item_attr.NameItem;
+		//Enemy_Attrbutes.Enemy_Drop.Number_Possible_C1_Drop_1 = player.Item_attr.NumberItem;
+		//player.OutNameItem(2); // зелье здоровья
+		//Enemy_Attrbutes.Enemy_Drop.Name_Possible_C2_Drops_1 = player.Item_attr.NameItem;
+		//Enemy_Attrbutes.Enemy_Drop.Number_Possible_C2_Drop_1 = player.Item_attr.NumberItem;
+		//player.OutNameItem(3); // зелье выносливости
+		//Enemy_Attrbutes.Enemy_Drop.Name_Possible_C3_Drops_1 = player.Item_attr.NameItem;
+		//Enemy_Attrbutes.Enemy_Drop.Number_Possible_C3_Drop_1 = player.Item_attr.NumberItem;
+		//
+		//player.OutNameItem(4); // зелье урона
+		//Enemy_Attrbutes.Enemy_Drop.Name_Possible_S1_Drops_1 = player.Item_attr.NameItem;
+		//Enemy_Attrbutes.Enemy_Drop.Number_Possible_S1_Drop_1 = player.Item_attr.NumberItem;
+		//player.OutNameItem(5);// зелье невидимости
+		//Enemy_Attrbutes.Enemy_Drop.Name_Possible_S2_Drops_1 = player.Item_attr.NameItem;
+		//Enemy_Attrbutes.Enemy_Drop.Number_Possible_S2_Drop_1 = player.Item_attr.NumberItem;
+		//
+		//player.OutNameItem(6);// зелье урона
+		//Enemy_Attrbutes.Enemy_Drop.Name_Possible_G1_Drops_1 = player.Item_attr.NameItem;
+		//Enemy_Attrbutes.Enemy_Drop.Number_Possible_G1_Drop_1 = player.Item_attr.NumberItem;
 
 		break;
 
@@ -1099,28 +1097,27 @@ void Enemy::MobDrops(Enemy& enemy, Character& player)
 
 	if (NumberEnemy == 1)
 	{
-		 //элементаль
-		player.OutNameItem(1); // зелье маны
-		Enemy_Attrbutes.Enemy_Drop.Quantity_drop_gold = 10;
-		Enemy_Attrbutes.Enemy_Drop.Name_Possible_C1_Drops_1 = player.Item_attr.NameItem;
-		Enemy_Attrbutes.Enemy_Drop.Number_Possible_C1_Drop_1 = player.Item_attr.NumberItem;
-		player.OutNameItem(2); // зелье здоровья
-		Enemy_Attrbutes.Enemy_Drop.Name_Possible_C2_Drops_1 = player.Item_attr.NameItem;
-		Enemy_Attrbutes.Enemy_Drop.Number_Possible_C2_Drop_1 = player.Item_attr.NumberItem;
-		player.OutNameItem(3); // зелье выносливости
-		Enemy_Attrbutes.Enemy_Drop.Name_Possible_C3_Drops_1 = player.Item_attr.NameItem;
-		Enemy_Attrbutes.Enemy_Drop.Number_Possible_C3_Drop_1 = player.Item_attr.NumberItem;
-		
-		player.OutNameItem(4); // зелье урона
-		Enemy_Attrbutes.Enemy_Drop.Name_Possible_S1_Drops_1 = player.Item_attr.NameItem;
-		Enemy_Attrbutes.Enemy_Drop.Number_Possible_S1_Drop_1 = player.Item_attr.NumberItem;
-		player.OutNameItem(5);// зелье невидимости
-		Enemy_Attrbutes.Enemy_Drop.Name_Possible_S2_Drops_1 = player.Item_attr.NameItem;
-		Enemy_Attrbutes.Enemy_Drop.Number_Possible_S2_Drop_1 = player.Item_attr.NumberItem;
-		
-		player.OutNameItem(6);// зелье урона
-		Enemy_Attrbutes.Enemy_Drop.Name_Possible_G1_Drops_1 = player.Item_attr.NameItem;
-		Enemy_Attrbutes.Enemy_Drop.Number_Possible_G1_Drop_1 = player.Item_attr.NumberItem;
+		// элементаль
+		//player.OutNameItem(1); // зелье маны
+		//Enemy_Attrbutes.Enemy_Drop.Name_Possible_C1_Drops_1 = player.Item_attr.NameItem;
+		//Enemy_Attrbutes.Enemy_Drop.Number_Possible_C1_Drop_1 = player.Item_attr.NumberItem;
+		//player.OutNameItem(2); // зелье здоровья
+		//Enemy_Attrbutes.Enemy_Drop.Name_Possible_C2_Drops_1 = player.Item_attr.NameItem;
+		//Enemy_Attrbutes.Enemy_Drop.Number_Possible_C2_Drop_1 = player.Item_attr.NumberItem;
+		//player.OutNameItem(3); // зелье выносливости
+		//Enemy_Attrbutes.Enemy_Drop.Name_Possible_C3_Drops_1 = player.Item_attr.NameItem;
+		//Enemy_Attrbutes.Enemy_Drop.Number_Possible_C3_Drop_1 = player.Item_attr.NumberItem;
+		//
+		//player.OutNameItem(4); // зелье урона
+		//Enemy_Attrbutes.Enemy_Drop.Name_Possible_S1_Drops_1 = player.Item_attr.NameItem;
+		//Enemy_Attrbutes.Enemy_Drop.Number_Possible_S1_Drop_1 = player.Item_attr.NumberItem;
+		//player.OutNameItem(5);// зелье невидимости
+		//Enemy_Attrbutes.Enemy_Drop.Name_Possible_S2_Drops_1 = player.Item_attr.NameItem;
+		//Enemy_Attrbutes.Enemy_Drop.Number_Possible_S2_Drop_1 = player.Item_attr.NumberItem;
+		//
+		//player.OutNameItem(6);// зелье урона
+		//Enemy_Attrbutes.Enemy_Drop.Name_Possible_G1_Drops_1 = player.Item_attr.NameItem;
+		//Enemy_Attrbutes.Enemy_Drop.Number_Possible_G1_Drop_1 = player.Item_attr.NumberItem;
 	}
 	else if (NumberEnemy == 2)
 	{
