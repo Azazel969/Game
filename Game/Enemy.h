@@ -25,6 +25,8 @@ struct EnemyDrops
 
 	int Quantity_drop_gold = 1; // золото выпавшее с врага
 
+	int  Quantity_drop_xp;// эссенция опыта игрока
+
 	int  Quantity_drop_xp_skill;// эссенция опыта скила
 	
 	int  Quantity_drop_xp_ability;// эссенция опыта абилки
@@ -34,12 +36,12 @@ struct EnemyDrops
 	int Quantity_drop_potion = quantityItem;// количество выпавших предметов 
 
 	std::string Name_drops_armor; // дроп брони
-	int Number_drop_armor;
-	int Quantity_drop_armor = quantityItem;
+	int Number_drop_armor;// его номер(по функции OutNameItem(№ предмета))
+	int Quantity_drop_armor = quantityItem;// количество выпавших предметов 
 
 	std::string Name_drops_weapon; // дроп оружия
-	int Number_drop_weapon;
-	int Quantity_drop_weapon = quantityItem;
+	int Number_drop_weapon;// его номер(по функции OutNameItem(№ предмета))
+	int Quantity_drop_weapon = quantityItem;// количество выпавших предметов 
 
 	//////////////////////////////////////////////////////////////////////////////////
 	int Arr_drop_potion[21];// Drops_potion возможные предметы

@@ -28,12 +28,14 @@ void Enemy::CreateEnemy(Enemy& enemy)
 			if (!enemy.test)
 			{
 				if (enemy.bestiaryRan)
+				{
 					if (element == 0) element = 1;
-					else
-					{
-						srand(time(NULL));
-						element = 1 + rand() % 4;
-					}
+				}
+				else
+				{
+					srand(time(NULL));
+					element = 1 + rand() % 4;
+				}
 
 				EnemyAttribute elementalAttributes = {};
 				elementalAttributes.enamyLevel = 3;
@@ -69,6 +71,12 @@ void Enemy::CreateEnemy(Enemy& enemy)
 				if (enemy.bestiaryRan) element++;
 
 				elementalAttributes.enemyName = " Элементаль";
+
+				elementalAttributes.Enemy_Drop.Quantity_drop_gold = 1;
+				elementalAttributes.Enemy_Drop.Quantity_drop_xp = 1;
+				elementalAttributes.Enemy_Drop.Quantity_drop_xp_skill = 1;
+				elementalAttributes.Enemy_Drop.Quantity_drop_xp_ability = 1;
+
 				Enemy Elemental(elementalAttributes);
 
 				if (enemy.bestiaryRan) Elemental.PrintEnemyStats();
@@ -93,6 +101,12 @@ void Enemy::CreateEnemy(Enemy& enemy)
 				arachnidAttributes.enamyElement = enemy.Enemy_Attrbutes.Not;
 				arachnidAttributes.enamyElement_txt = "не имеет";
 				arachnidAttributes.enamyNumber = NumberEnemy;
+
+				arachnidAttributes.Enemy_Drop.Quantity_drop_gold = 1;
+				arachnidAttributes.Enemy_Drop.Quantity_drop_xp = 1;
+				arachnidAttributes.Enemy_Drop.Quantity_drop_xp_skill = 1;
+				arachnidAttributes.Enemy_Drop.Quantity_drop_xp_ability = 1;
+
 				Enemy Arachnid(arachnidAttributes);
 
 				if (enemy.bestiaryRan) Arachnid.PrintEnemyStats();
@@ -117,6 +131,12 @@ void Enemy::CreateEnemy(Enemy& enemy)
 				goblin_warriorAttributes.enamyElement = enemy.Enemy_Attrbutes.Not;
 				goblin_warriorAttributes.enamyElement_txt = "не имеет";
 				goblin_warriorAttributes.enamyNumber = NumberEnemy;
+
+				goblin_warriorAttributes.Enemy_Drop.Quantity_drop_gold = 1;
+				goblin_warriorAttributes.Enemy_Drop.Quantity_drop_xp = 1;
+				goblin_warriorAttributes.Enemy_Drop.Quantity_drop_xp_skill = 1;
+				goblin_warriorAttributes.Enemy_Drop.Quantity_drop_xp_ability = 1;
+
 				Enemy Goblin_Warrior(goblin_warriorAttributes);
 
 				if (enemy.bestiaryRan) Goblin_Warrior.PrintEnemyStats();
@@ -141,6 +161,12 @@ void Enemy::CreateEnemy(Enemy& enemy)
 				goblin_shamanAttributes.enamyElement = enemy.Enemy_Attrbutes.All;
 				goblin_shamanAttributes.enamyElement_txt = " Имеет благословление Духа Гайи";
 				goblin_shamanAttributes.enamyNumber = NumberEnemy;
+
+				goblin_shamanAttributes.Enemy_Drop.Quantity_drop_gold = 1;
+				goblin_shamanAttributes.Enemy_Drop.Quantity_drop_xp = 1;
+				goblin_shamanAttributes.Enemy_Drop.Quantity_drop_xp_skill = 1;
+				goblin_shamanAttributes.Enemy_Drop.Quantity_drop_xp_ability = 1;
+
 				Enemy Goblin_Shaman(goblin_shamanAttributes);
 
 				if (enemy.bestiaryRan) Goblin_Shaman.PrintEnemyStats();
@@ -161,10 +187,16 @@ void Enemy::CreateEnemy(Enemy& enemy)
 				bansheeAttributes.enamyMp = 140;
 				bansheeAttributes.enamyArmor = 20;
 				bansheeAttributes.enamyAvoid = 40;
-				bansheeAttributes.enemyName = " Баньши";
+				bansheeAttributes.enemyName = " Банши";
 				bansheeAttributes.enamyElement = enemy.Enemy_Attrbutes.Air;
 				bansheeAttributes.enamyElement_txt = " Воздух";
 				bansheeAttributes.enamyNumber = NumberEnemy;
+
+				bansheeAttributes.Enemy_Drop.Quantity_drop_gold = 1;
+				bansheeAttributes.Enemy_Drop.Quantity_drop_xp = 1;
+				bansheeAttributes.Enemy_Drop.Quantity_drop_xp_skill = 1;
+				bansheeAttributes.Enemy_Drop.Quantity_drop_xp_ability = 1;
+
 				Enemy Banshee(bansheeAttributes);
 
 				if (enemy.bestiaryRan) Banshee.PrintEnemyStats();
@@ -189,6 +221,12 @@ void Enemy::CreateEnemy(Enemy& enemy)
 				draugrAttributes.enamyElement = enemy.Enemy_Attrbutes.Not;
 				draugrAttributes.enamyElement_txt = "не имеет";
 				draugrAttributes.enamyNumber = NumberEnemy;
+
+				draugrAttributes.Enemy_Drop.Quantity_drop_gold = 1;
+				draugrAttributes.Enemy_Drop.Quantity_drop_xp = 1;
+				draugrAttributes.Enemy_Drop.Quantity_drop_xp_skill = 1;
+				draugrAttributes.Enemy_Drop.Quantity_drop_xp_ability = 1;
+
 				Enemy Draugr(draugrAttributes);
 
 				if (enemy.bestiaryRan) Draugr.PrintEnemyStats();
@@ -213,6 +251,12 @@ void Enemy::CreateEnemy(Enemy& enemy)
 				slimeAttributes.enamyElement = enemy.Enemy_Attrbutes.Water;
 				slimeAttributes.enamyElement_txt = " Вода";
 				slimeAttributes.enamyNumber = NumberEnemy;
+
+				slimeAttributes.Enemy_Drop.Quantity_drop_gold = 1;
+				slimeAttributes.Enemy_Drop.Quantity_drop_xp = 1;
+				slimeAttributes.Enemy_Drop.Quantity_drop_xp_skill = 1;
+				slimeAttributes.Enemy_Drop.Quantity_drop_xp_ability = 1;
+				
 				Enemy Slime(slimeAttributes);
 
 				if (enemy.bestiaryRan) Slime.PrintEnemyStats();
@@ -237,6 +281,12 @@ void Enemy::CreateEnemy(Enemy& enemy)
 				satanistAttributes.enamyElement = enemy.Enemy_Attrbutes.Fire;
 				satanistAttributes.enamyElement_txt = " Огонь";
 				satanistAttributes.enamyNumber = NumberEnemy;
+
+				satanistAttributes.Enemy_Drop.Quantity_drop_gold = 1;
+				satanistAttributes.Enemy_Drop.Quantity_drop_xp = 1;
+				satanistAttributes.Enemy_Drop.Quantity_drop_xp_skill = 1;
+				satanistAttributes.Enemy_Drop.Quantity_drop_xp_ability = 1;
+
 				Enemy Satanist(satanistAttributes);
 
 				if (enemy.bestiaryRan) Satanist.PrintEnemyStats();
@@ -262,6 +312,12 @@ void Enemy::CreateEnemy(Enemy& enemy)
 				cave_bearAttributes.enamyElement = enemy.Enemy_Attrbutes.Earth;
 				cave_bearAttributes.enamyElement_txt = " Земля";
 				cave_bearAttributes.enamyNumber = NumberEnemy;
+
+				cave_bearAttributes.Enemy_Drop.Quantity_drop_gold = 1;
+				cave_bearAttributes.Enemy_Drop.Quantity_drop_xp = 1;
+				cave_bearAttributes.Enemy_Drop.Quantity_drop_xp_skill = 1;
+				cave_bearAttributes.Enemy_Drop.Quantity_drop_xp_ability = 1;
+
 				Enemy Cave_bear(cave_bearAttributes);
 
 				if (enemy.bestiaryRan) Cave_bear.PrintEnemyStats();
@@ -286,6 +342,12 @@ void Enemy::CreateEnemy(Enemy& enemy)
 				spirit_GaiaAttributes.enamyElement = enemy.Enemy_Attrbutes.All;
 				spirit_GaiaAttributes.enamyElement_txt = " Повелевает стихиями 4х элементов";
 				spirit_GaiaAttributes.enamyNumber = NumberEnemy;
+
+				spirit_GaiaAttributes.Enemy_Drop.Quantity_drop_gold = 1;
+				spirit_GaiaAttributes.Enemy_Drop.Quantity_drop_xp = 1;
+				spirit_GaiaAttributes.Enemy_Drop.Quantity_drop_xp_skill = 1;
+				spirit_GaiaAttributes.Enemy_Drop.Quantity_drop_xp_ability = 1;
+
 				Enemy Spirit_Gaia(spirit_GaiaAttributes);
 
 				if (enemy.bestiaryRan) Spirit_Gaia.PrintEnemyStats();
@@ -310,6 +372,12 @@ void Enemy::CreateEnemy(Enemy& enemy)
 				lichAttributes.enamyElement = enemy.Enemy_Attrbutes.All;
 				lichAttributes.enamyElement_txt = " Овладел всей известной магией";
 				lichAttributes.enamyNumber = NumberEnemy;
+
+				lichAttributes.Enemy_Drop.Quantity_drop_gold = 1;
+				lichAttributes.Enemy_Drop.Quantity_drop_xp = 1;
+				lichAttributes.Enemy_Drop.Quantity_drop_xp_skill = 1;
+				lichAttributes.Enemy_Drop.Quantity_drop_xp_ability = 1;
+
 				Enemy Lich(lichAttributes);
 
 				if (enemy.bestiaryRan) Lich.PrintEnemyStats();
@@ -335,6 +403,12 @@ void Enemy::CreateEnemy(Enemy& enemy)
 				chthonic_golemAttributes.enamyElement = enemy.Enemy_Attrbutes.Fire;
 				chthonic_golemAttributes.enamyElement_txt = " Огонь";
 				chthonic_golemAttributes.enamyNumber = NumberEnemy;
+
+				chthonic_golemAttributes.Enemy_Drop.Quantity_drop_gold = 1;
+				chthonic_golemAttributes.Enemy_Drop.Quantity_drop_xp = 1;
+				chthonic_golemAttributes.Enemy_Drop.Quantity_drop_xp_skill = 1;
+				chthonic_golemAttributes.Enemy_Drop.Quantity_drop_xp_ability = 1;
+
 				Enemy Chthonic_golem(chthonic_golemAttributes);
 
 				if (enemy.bestiaryRan) Chthonic_golem.PrintEnemyStats();
@@ -359,6 +433,12 @@ void Enemy::CreateEnemy(Enemy& enemy)
 				goblin_kingAttributes.enamyElement = enemy.Enemy_Attrbutes.All;
 				goblin_kingAttributes.enamyElement_txt = " Имеет благословление Духа Гайи";
 				goblin_kingAttributes.enamyNumber = NumberEnemy;
+
+				goblin_kingAttributes.Enemy_Drop.Quantity_drop_gold = 1;
+				goblin_kingAttributes.Enemy_Drop.Quantity_drop_xp = 1;
+				goblin_kingAttributes.Enemy_Drop.Quantity_drop_xp_skill = 1;
+				goblin_kingAttributes.Enemy_Drop.Quantity_drop_xp_ability = 1;
+
 				Enemy Goblin_king(goblin_kingAttributes);
 
 				if (enemy.bestiaryRan) Goblin_king.PrintEnemyStats();
@@ -432,7 +512,7 @@ void Enemy::CreateEnemy(Enemy& enemy)
 	/*
 	do
 	{
-		if (NumberEnemy == 1)
+		if (numberEnemy == 1)
 		{
 			if (enemy.bestiaryRan)
 			{
@@ -453,7 +533,7 @@ void Enemy::CreateEnemy(Enemy& enemy)
 			elementalAttributes.enamyMp = 361;
 			elementalAttributes.enamyArmor = 30;
 			elementalAttributes.enamyAvoid = 50;
-			elementalAttributes.enamyNumber = NumberEnemy;
+			elementalAttributes.enamyNumber = numberEnemy;
 
 			if (element == 1)
 			{
@@ -500,7 +580,7 @@ void Enemy::CreateEnemy(Enemy& enemy)
 			}
 
 		}
-		else if (NumberEnemy == 2)
+		else if (numberEnemy == 2)
 		{
 			EnemyAttribute arachnidAttributes = {};
 			arachnidAttributes.enamyLevel = 1;
@@ -511,7 +591,7 @@ void Enemy::CreateEnemy(Enemy& enemy)
 			arachnidAttributes.enemyName = " Арахнид";
 			arachnidAttributes.enamyElement = enemy.Enemy_Attrbutes.Not;
 			arachnidAttributes.enamyElement_txt = "не имеет";
-			arachnidAttributes.enamyNumber = NumberEnemy;
+			arachnidAttributes.enamyNumber = numberEnemy;
 			Enemy Arachnid(arachnidAttributes);
 
 			if (enemy.bestiaryRan)
@@ -528,7 +608,7 @@ void Enemy::CreateEnemy(Enemy& enemy)
 				std::cout << std::endl;
 			}
 		}
-		else if (NumberEnemy == 3)
+		else if (numberEnemy == 3)
 		{
 			EnemyAttribute goblin_warriorAttributes = {};
 			goblin_warriorAttributes.enamyLevel = 1;
@@ -539,7 +619,7 @@ void Enemy::CreateEnemy(Enemy& enemy)
 			goblin_warriorAttributes.enemyName = " Гоблин-воин";
 			goblin_warriorAttributes.enamyElement = enemy.Enemy_Attrbutes.Not;
 			goblin_warriorAttributes.enamyElement_txt = "не имеет";
-			goblin_warriorAttributes.enamyNumber = NumberEnemy;
+			goblin_warriorAttributes.enamyNumber = numberEnemy;
 			Enemy Goblin_Warrior(goblin_warriorAttributes);
 
 			if (enemy.bestiaryRan)
@@ -556,7 +636,7 @@ void Enemy::CreateEnemy(Enemy& enemy)
 				std::cout << std::endl;
 			}
 		}
-		else if (NumberEnemy == 4)
+		else if (numberEnemy == 4)
 		{
 			EnemyAttribute goblin_shamanAttributes = {};
 			goblin_shamanAttributes.enamyLevel = 2;
@@ -567,7 +647,7 @@ void Enemy::CreateEnemy(Enemy& enemy)
 			goblin_shamanAttributes.enemyName = " Гоблин-шаман";
 			goblin_shamanAttributes.enamyElement = enemy.Enemy_Attrbutes.All;
 			goblin_shamanAttributes.enamyElement_txt = " Имеет благославление Духа Гаии";
-			goblin_shamanAttributes.enamyNumber = NumberEnemy;
+			goblin_shamanAttributes.enamyNumber = numberEnemy;
 			Enemy Goblin_Shaman(goblin_shamanAttributes);
 
 			if (enemy.bestiaryRan)
@@ -584,7 +664,7 @@ void Enemy::CreateEnemy(Enemy& enemy)
 				std::cout << std::endl;
 			}
 		}
-		else if (NumberEnemy == 5)
+		else if (numberEnemy == 5)
 		{
 			EnemyAttribute bansheeAttributes = {};
 			bansheeAttributes.enamyLevel = 2;
@@ -595,7 +675,7 @@ void Enemy::CreateEnemy(Enemy& enemy)
 			bansheeAttributes.enemyName = " Баньши";
 			bansheeAttributes.enamyElement = enemy.Enemy_Attrbutes.Air;
 			bansheeAttributes.enamyElement_txt = " Воздух";
-			bansheeAttributes.enamyNumber = NumberEnemy;
+			bansheeAttributes.enamyNumber = numberEnemy;
 			Enemy Banshee(bansheeAttributes);
 
 			if (enemy.bestiaryRan)
@@ -612,7 +692,7 @@ void Enemy::CreateEnemy(Enemy& enemy)
 				std::cout << std::endl;
 			}
 		}
-		else if (NumberEnemy == 6)
+		else if (numberEnemy == 6)
 		{
 			EnemyAttribute draugrAttributes = {};
 			draugrAttributes.enamyLevel = 2;
@@ -623,7 +703,7 @@ void Enemy::CreateEnemy(Enemy& enemy)
 			draugrAttributes.enemyName = " Драугр";
 			draugrAttributes.enamyElement = enemy.Enemy_Attrbutes.Not;
 			draugrAttributes.enamyElement_txt = "не имеет";
-			draugrAttributes.enamyNumber = NumberEnemy;
+			draugrAttributes.enamyNumber = numberEnemy;
 			Enemy Draugr(draugrAttributes);
 
 			if (enemy.bestiaryRan)
@@ -640,7 +720,7 @@ void Enemy::CreateEnemy(Enemy& enemy)
 				std::cout << std::endl;
 			}
 		}
-		else if (NumberEnemy == 7)
+		else if (numberEnemy == 7)
 		{
 			EnemyAttribute slimeAttributes = {};
 			slimeAttributes.enamyLevel = 1;
@@ -651,7 +731,7 @@ void Enemy::CreateEnemy(Enemy& enemy)
 			slimeAttributes.enemyName = " Слизь";
 			slimeAttributes.enamyElement = enemy.Enemy_Attrbutes.Water;
 			slimeAttributes.enamyElement_txt = " Вода";
-			slimeAttributes.enamyNumber = NumberEnemy;
+			slimeAttributes.enamyNumber = numberEnemy;
 			Enemy Slime(slimeAttributes);
 
 			if (enemy.bestiaryRan)
@@ -668,7 +748,7 @@ void Enemy::CreateEnemy(Enemy& enemy)
 				std::cout << std::endl;
 			}
 		}
-		else if (NumberEnemy == 8)
+		else if (numberEnemy == 8)
 		{
 			EnemyAttribute satanistAttributes = {};
 			satanistAttributes.enamyLevel = 3;
@@ -679,7 +759,7 @@ void Enemy::CreateEnemy(Enemy& enemy)
 			satanistAttributes.enemyName = " Сатанист";
 			satanistAttributes.enamyElement = enemy.Enemy_Attrbutes.Fire;
 			satanistAttributes.enamyElement_txt = " Огонь";
-			satanistAttributes.enamyNumber = NumberEnemy;
+			satanistAttributes.enamyNumber = numberEnemy;
 			Enemy Satanist(satanistAttributes);
 
 			if (enemy.bestiaryRan)
@@ -696,7 +776,7 @@ void Enemy::CreateEnemy(Enemy& enemy)
 				std::cout << std::endl;
 			}
 		}
-		else if (NumberEnemy == 9)
+		else if (numberEnemy == 9)
 		{
 		EnemyAttribute cave_bearAttributes = {};
 		cave_bearAttributes.enamyLevel = 2;
@@ -707,7 +787,7 @@ void Enemy::CreateEnemy(Enemy& enemy)
 		cave_bearAttributes.enemyName = " Пещерный медведь";
 		cave_bearAttributes.enamyElement = enemy.Enemy_Attrbutes.Earth;
 		cave_bearAttributes.enamyElement_txt = " Земля";
-		cave_bearAttributes.enamyNumber = NumberEnemy;
+		cave_bearAttributes.enamyNumber = numberEnemy;
 		Enemy Cave_bear(cave_bearAttributes);
 
 			if (enemy.bestiaryRan)
@@ -724,7 +804,7 @@ void Enemy::CreateEnemy(Enemy& enemy)
 				std::cout << std::endl;
 			}
 		}
-		else if (NumberEnemy == 10)
+		else if (numberEnemy == 10)
 		{
 			EnemyAttribute spirit_GaiaAttributes = {}; // бос
 			spirit_GaiaAttributes.enamyLevel = 4;
@@ -735,7 +815,7 @@ void Enemy::CreateEnemy(Enemy& enemy)
 			spirit_GaiaAttributes.enemyName = " Дух Гайи";
 			spirit_GaiaAttributes.enamyElement = enemy.Enemy_Attrbutes.All;
 			spirit_GaiaAttributes.enamyElement_txt = " Повелевает стихиями 4х элементов";
-			spirit_GaiaAttributes.enamyNumber = NumberEnemy;
+			spirit_GaiaAttributes.enamyNumber = numberEnemy;
 			Enemy Spirit_Gaia(spirit_GaiaAttributes);
 
 			if (enemy.bestiaryRan)
@@ -752,7 +832,7 @@ void Enemy::CreateEnemy(Enemy& enemy)
 				std::cout << std::endl;
 			}
 		}
-		else if (NumberEnemy == 11)
+		else if (numberEnemy == 11)
 		{
 			EnemyAttribute lichAttributes = {}; // бос
 			lichAttributes.enamyLevel = 4;
@@ -763,7 +843,7 @@ void Enemy::CreateEnemy(Enemy& enemy)
 			lichAttributes.enemyName = " Лич";
 			lichAttributes.enamyElement = enemy.Enemy_Attrbutes.All;
 			lichAttributes.enamyElement_txt = " Овладел всей известной магией";
-			lichAttributes.enamyNumber = NumberEnemy;
+			lichAttributes.enamyNumber = numberEnemy;
 			Enemy Lich(lichAttributes);
 
 			if (enemy.bestiaryRan)
@@ -781,7 +861,7 @@ void Enemy::CreateEnemy(Enemy& enemy)
 				std::cout << std::endl;
 			}
 		}
-		else if (NumberEnemy == 12)///////////////////////////////////////////////////////////
+		else if (numberEnemy == 12)///////////////////////////////////////////////////////////
 		{
 			EnemyAttribute chthonic_golemAttributes = {}; // бос
 			chthonic_golemAttributes.enamyLevel = 4;
@@ -792,7 +872,7 @@ void Enemy::CreateEnemy(Enemy& enemy)
 			chthonic_golemAttributes.enemyName = " Хтонический голем";
 			chthonic_golemAttributes.enamyElement = enemy.Enemy_Attrbutes.Fire;
 			chthonic_golemAttributes.enamyElement_txt = " Огонь";
-			chthonic_golemAttributes.enamyNumber = NumberEnemy;
+			chthonic_golemAttributes.enamyNumber = numberEnemy;
 			Enemy Chthonic_golem(chthonic_golemAttributes);
 
 			if (enemy.bestiaryRan)
@@ -809,7 +889,7 @@ void Enemy::CreateEnemy(Enemy& enemy)
 				std::cout << std::endl;
 			}
 		}
-		else if (NumberEnemy == 13)///////////////////////////////////////////////
+		else if (numberEnemy == 13)///////////////////////////////////////////////
 		{
 			EnemyAttribute goblin_kingAttributes = {}; // бос
 			goblin_kingAttributes.enamyLevel = 4;
@@ -820,7 +900,7 @@ void Enemy::CreateEnemy(Enemy& enemy)
 			goblin_kingAttributes.enemyName = " Король гоблинов";
 			goblin_kingAttributes.enamyElement = enemy.Enemy_Attrbutes.All;
 			goblin_kingAttributes.enamyElement_txt = " Имеет благословение Духа Гаии";
-			goblin_kingAttributes.enamyNumber = NumberEnemy;
+			goblin_kingAttributes.enamyNumber = numberEnemy;
 			Enemy Goblin_king(goblin_kingAttributes);
 
 			if (enemy.bestiaryRan)
@@ -837,7 +917,7 @@ void Enemy::CreateEnemy(Enemy& enemy)
 				std::cout << std::endl;
 			}
 		}
-		else if (NumberEnemy == 99)//////////////////////////////////////////////
+		else if (numberEnemy == 99)//////////////////////////////////////////////
 		{
 			EnemyAttribute defAttributes = {}; // final бос 
 			defAttributes.enamyLevel = 1;
@@ -848,7 +928,7 @@ void Enemy::CreateEnemy(Enemy& enemy)
 			defAttributes.enemyName = " Default";
 			defAttributes.enamyElement = enemy.Enemy_Attrbutes.Not;
 			defAttributes.enamyElement_txt = " ???";
-			defAttributes.enamyNumber = NumberEnemy;
+			defAttributes.enamyNumber = numberEnemy;
 			Enemy Default(defAttributes);
 
 			enemy = Default;
@@ -863,18 +943,18 @@ void Enemy::CreateEnemy(Enemy& enemy)
 			}
 			i++;
 
-			if (NumberEnemy == 1)//вывод элементалей
+			if (numberEnemy == 1)//вывод элементалей
 			{
 				if (element == 5)
 				{
-					NumberEnemy++;
+					numberEnemy++;
 				}
 			}
-			else if (NumberEnemy > 1 && NumberEnemy < 14)//вывод всех остальных монстров
+			else if (numberEnemy > 1 && numberEnemy < 14)//вывод всех остальных монстров
 			{
-				NumberEnemy++;
+				numberEnemy++;
 			}
-			else if (NumberEnemy == 14)
+			else if (numberEnemy == 14)
 			{
 				enemy.bestiaryRan = false;
 				element = 0;
@@ -892,12 +972,12 @@ void Enemy::PrintEnemyStats()
 	if (Enemy_Attrbutes.enamyElement >= 1 && Enemy_Attrbutes.enamyElement <= 4)
 	{
 		std::cout << std::endl;
-		std::cout <<" Cихия: " << Enemy_Attrbutes.enamyElement_txt << std::endl;
+		std::cout <<" Стихия: " << Enemy_Attrbutes.enamyElement_txt << std::endl;
 	}
 	else if (Enemy_Attrbutes.enamyElement == 0)
 	{
 		std::cout << std::endl;
-		std::cout << " Cихии " << Enemy_Attrbutes.enamyElement_txt << std::endl;
+		std::cout << " Стихии " << Enemy_Attrbutes.enamyElement_txt << std::endl;
 	}
 	else if (Enemy_Attrbutes.enamyElement == 5)
 	{
@@ -939,7 +1019,7 @@ void Enemy::СhoiceDrop(Character& player)
 	//дроп
 	//дроп
 
-	player._PlayerAttributes._Inventory.many = +10;
+	player._PlayerAttributes._Inventory.many = player._PlayerAttributes._Inventory.many + 10;
 
 
 
@@ -956,7 +1036,7 @@ void Enemy::СhoiceDrop(Character& player)
 
 //////////////
 
-	///*srand(time(NULL));
+	/* srand(time(NULL));
 	choiseDrop = 1 + rand() % 8;
 	std::cout << "тестовая запись: " << choiseDrop << std::endl;
 	std::cout << " В останках существа вы ";
@@ -1047,40 +1127,42 @@ void Enemy::СhoiceDrop(Character& player)
 	}
 
 	choiseDrop = 0;
-}//*/
+	//*/
+}
 //////////////
 
 
 void Enemy::MobDrops(Enemy& enemy, Character& player)
 {
-	int NumberEnemy = Enemy_Attrbutes.enamyNumber;
+	int numberEnemy = Enemy_Attrbutes.enamyNumber;
 
 
-	switch (NumberEnemy)
+	switch (numberEnemy)
 	{
 	case 1:
 		
 		 /*элементаль*/
-		player.OutNameItem(1); // зелье маны
-		Enemy_Attrbutes.Enemy_Drop.Name_Possible_C1_Drops_1 = player.Item_attr.NameItem;
-		Enemy_Attrbutes.Enemy_Drop.Number_Possible_C1_Drop_1 = player.Item_attr.NumberItem;
-		player.OutNameItem(2); // зелье здоровья
-		Enemy_Attrbutes.Enemy_Drop.Name_Possible_C2_Drops_1 = player.Item_attr.NameItem;
-		Enemy_Attrbutes.Enemy_Drop.Number_Possible_C2_Drop_1 = player.Item_attr.NumberItem;
-		player.OutNameItem(3); // зелье выносливости
-		Enemy_Attrbutes.Enemy_Drop.Name_Possible_C3_Drops_1 = player.Item_attr.NameItem;
-		Enemy_Attrbutes.Enemy_Drop.Number_Possible_C3_Drop_1 = player.Item_attr.NumberItem;
-		
-		player.OutNameItem(4); // зелье урона
-		Enemy_Attrbutes.Enemy_Drop.Name_Possible_S1_Drops_1 = player.Item_attr.NameItem;
-		Enemy_Attrbutes.Enemy_Drop.Number_Possible_S1_Drop_1 = player.Item_attr.NumberItem;
-		player.OutNameItem(5);// зелье невидимости
-		Enemy_Attrbutes.Enemy_Drop.Name_Possible_S2_Drops_1 = player.Item_attr.NameItem;
-		Enemy_Attrbutes.Enemy_Drop.Number_Possible_S2_Drop_1 = player.Item_attr.NumberItem;
-		
-		player.OutNameItem(6);// зелье урона
-		Enemy_Attrbutes.Enemy_Drop.Name_Possible_G1_Drops_1 = player.Item_attr.NameItem;
-		Enemy_Attrbutes.Enemy_Drop.Number_Possible_G1_Drop_1 = player.Item_attr.NumberItem;
+
+		//player.OutNameItem(1); // зелье маны
+		//Enemy_Attrbutes.Enemy_Drop.Name_Possible_C1_Drops_1 = player.Item_attr.NameItem;
+		//Enemy_Attrbutes.Enemy_Drop.Number_Possible_C1_Drop_1 = player.Item_attr.NumberItem;
+		//player.OutNameItem(2); // зелье здоровья
+		//Enemy_Attrbutes.Enemy_Drop.Name_Possible_C2_Drops_1 = player.Item_attr.NameItem;
+		//Enemy_Attrbutes.Enemy_Drop.Number_Possible_C2_Drop_1 = player.Item_attr.NumberItem;
+		//player.OutNameItem(3); // зелье выносливости
+		//Enemy_Attrbutes.Enemy_Drop.Name_Possible_C3_Drops_1 = player.Item_attr.NameItem;
+		//Enemy_Attrbutes.Enemy_Drop.Number_Possible_C3_Drop_1 = player.Item_attr.NumberItem;
+		//
+		//player.OutNameItem(4); // зелье урона
+		//Enemy_Attrbutes.Enemy_Drop.Name_Possible_S1_Drops_1 = player.Item_attr.NameItem;
+		//Enemy_Attrbutes.Enemy_Drop.Number_Possible_S1_Drop_1 = player.Item_attr.NumberItem;
+		//player.OutNameItem(5);// зелье невидимости
+		//Enemy_Attrbutes.Enemy_Drop.Name_Possible_S2_Drops_1 = player.Item_attr.NameItem;
+		//Enemy_Attrbutes.Enemy_Drop.Number_Possible_S2_Drop_1 = player.Item_attr.NumberItem;
+		//
+		//player.OutNameItem(6);// зелье урона
+		//Enemy_Attrbutes.Enemy_Drop.Name_Possible_G1_Drops_1 = player.Item_attr.NameItem;
+		//Enemy_Attrbutes.Enemy_Drop.Number_Possible_G1_Drop_1 = player.Item_attr.NumberItem;
 
 		break;
 
@@ -1095,9 +1177,9 @@ void Enemy::MobDrops(Enemy& enemy, Character& player)
 
 
 
-	
+	/* пример
 
-	if (NumberEnemy == 1)
+	if (numberEnemy == 1)
 	{
 		 //элементаль
 		player.OutNameItem(1); // зелье маны
@@ -1122,7 +1204,7 @@ void Enemy::MobDrops(Enemy& enemy, Character& player)
 		Enemy_Attrbutes.Enemy_Drop.Name_Possible_G1_Drops_1 = player.Item_attr.NameItem;
 		Enemy_Attrbutes.Enemy_Drop.Number_Possible_G1_Drop_1 = player.Item_attr.NumberItem;
 	}
-	else if (NumberEnemy == 2)
+	else if (numberEnemy == 2)
 	{
 		// арахнид
 
@@ -1147,7 +1229,7 @@ void Enemy::MobDrops(Enemy& enemy, Character& player)
 		//Enemy_Attrbutes.Enemy_Drop.Name_Possible_G1_Drops_1 = player.Item_attr.NameItem;
 		//Enemy_Attrbutes.Enemy_Drop.Number_Possible_G1_Drop_1 = player.Item_attr.NumberItem;
 	}
-	else if (NumberEnemy == 3)
+	else if (numberEnemy == 3)
 	{
 		//  гоблин воин  (зелья мал и ср)
 
@@ -1172,7 +1254,7 @@ void Enemy::MobDrops(Enemy& enemy, Character& player)
 		//Enemy_Attrbutes.Enemy_Drop.Name_Possible_G1_Drops_1 = player.Item_attr.NameItem;
 		//Enemy_Attrbutes.Enemy_Drop.Number_Possible_G1_Drop_1 = player.Item_attr.NumberItem;
 	}
-	else if (NumberEnemy == 4)
+	else if (numberEnemy == 4)
 	{
 		// гоблин шаман  весе зелья
 
@@ -1197,7 +1279,7 @@ void Enemy::MobDrops(Enemy& enemy, Character& player)
 	//	Enemy_Attrbutes.Enemy_Drop.Name_Possible_G1_Drops_1 = player.Item_attr.NameItem;
 	//	Enemy_Attrbutes.Enemy_Drop.Number_Possible_G1_Drop_1 = player.Item_attr.NumberItem;
 	}
-	else if (NumberEnemy == 5)
+	else if (numberEnemy == 5)
 	{
 		// баньши
 
@@ -1222,7 +1304,7 @@ void Enemy::MobDrops(Enemy& enemy, Character& player)
 		//Enemy_Attrbutes.Enemy_Drop.Name_Possible_G1_Drops_1 = player.Item_attr.NameItem;
 		//Enemy_Attrbutes.Enemy_Drop.Number_Possible_G1_Drop_1 = player.Item_attr.NumberItem;
 	}
-	else if (NumberEnemy == 6)
+	else if (numberEnemy == 6)
 	{
 	// драугр
 
@@ -1247,7 +1329,7 @@ void Enemy::MobDrops(Enemy& enemy, Character& player)
 		//Enemy_Attrbutes.Enemy_Drop.Name_Possible_G1_Drops_1 = player.Item_attr.NameItem;
 		//Enemy_Attrbutes.Enemy_Drop.Number_Possible_G1_Drop_1 = player.Item_attr.NumberItem;
 	}
-	else if (NumberEnemy == 7)
+	else if (numberEnemy == 7)
 	{
 		// слизь
 
@@ -1273,7 +1355,7 @@ void Enemy::MobDrops(Enemy& enemy, Character& player)
 		//Enemy_Attrbutes.Enemy_Drop.Number_Possible_G1_Drop_1 = player.Item_attr.NumberItem;
 	}
 	
-	else if (NumberEnemy == 8)
+	else if (numberEnemy == 8)
 	{
 		// сатанист
 		
@@ -1298,7 +1380,7 @@ void Enemy::MobDrops(Enemy& enemy, Character& player)
 		//Enemy_Attrbutes.Enemy_Drop.Name_Possible_G1_Drops_1 = player.Item_attr.NameItem;
 		//Enemy_Attrbutes.Enemy_Drop.Number_Possible_G1_Drop_1 = player.Item_attr.NumberItem;
 	}
-	else if (NumberEnemy == 9)
+	else if (numberEnemy == 9)
 	{
 		// дух гайи
 
@@ -1323,7 +1405,7 @@ void Enemy::MobDrops(Enemy& enemy, Character& player)
 		//Enemy_Attrbutes.Enemy_Drop.Name_Possible_G1_Drops_1 = player.Item_attr.NameItem;
 		//Enemy_Attrbutes.Enemy_Drop.Number_Possible_G1_Drop_1 = player.Item_attr.NumberItem;
 	}
-	else if (NumberEnemy == 10)
+	else if (numberEnemy == 10)
 	{
 		// лич
 
@@ -1348,6 +1430,8 @@ void Enemy::MobDrops(Enemy& enemy, Character& player)
 		//Enemy_Attrbutes.Enemy_Drop.Name_Possible_G1_Drops_1 = player.Item_attr.NameItem;
 		//Enemy_Attrbutes.Enemy_Drop.Number_Possible_G1_Drop_1 = player.Item_attr.NumberItem;
 	}
+
+	*/
 
 	СhoiceDrop(player);
 }

@@ -154,6 +154,7 @@ void Battle::battle(Character& player, Enemy& enemy)
 
 			if (numberEnemy > enemy.allEnamy)
 			{
+				std::cout << " исправить подщет enamy" << std::endl;
 				start_fight = false;
 				break;
 			}
@@ -172,42 +173,15 @@ void Battle::battle(Character& player, Enemy& enemy)
 			{
 				system("CLS");
 
-				Step++;
-
-				runaway = false;
-				int odds = 1 + rand() % 4;
-				if (odds == 1)
-				{
-					runaway = true;
-				}
-
-				if (detecred_enemy)
-				{
-					crit_enemy = true;
-					crit_player = false;
-				}
-				else if (detecred_player)
-				{
-					crit_player = true;
-					crit_enemy = false;
-				}
-				else if (detecred_enemy && detecred_player)
-				{
-					crit_player = false;
-					crit_enemy = false;
-				}
-
-				Fight(player, enemy);
-
 				if (PlayerDie || EnemyDie)
 				{
 					Bl_Fight = false;
-					battleRan = false;
+					start_fight = false;
 					if (EnemyDie)
 					{
 						system("CLS");
 						std::cout << " Вы стоите над телом поверженного врага" << std::endl;
-						//std::cout << " Осмотреть место битвы на наличие вещей почившего? или побыстрее уйти в надежде что никто вас не услышал?" << std::endl;
+						std::cout << " Осмотреть место битвы на наличие вещей почившего? или побыстрее уйти в надежде что никто вас не услышал?" << std::endl;
 						std::cout << " Посмотреть убитого(E)   Уйти(G)" << std::endl;
 						UserInput = input_registration.Click_tracking(UserInput);
 
@@ -219,12 +193,42 @@ void Battle::battle(Character& player, Enemy& enemy)
 						{
 							std::cout << " Решив сразу уйти вы вынесли из битвы только опыт" << std::endl;
 						}
+						std::cout << " вывод полученного дропа" << std::endl;
+						system("pause");
 
-						mobDrop = true;
-						battleRan = false;
+						EnemyDie = false;
+
+						break;
 					}
-					else return;
+					else break;
 				}
+
+				Step++;
+
+				runaway = false;
+				int odds = 1 + rand() % 4;
+				if (odds == 1)
+				{
+					runaway = true;
+				}
+
+				if (detecred_enemy && !detecred_player)
+				{
+					crit_enemy = true;
+					crit_player = false;
+				}
+				else if (detecred_player && !detecred_enemy)
+				{
+					crit_player = true;
+					crit_enemy = false;
+				}
+				else if (detecred_enemy && detecred_player)
+				{
+					crit_player = false;
+					crit_enemy = false;
+				}
+
+				Fight(player, enemy);
 			}
 		}
 
@@ -356,7 +360,7 @@ void Battle::FidhtOverview(Character& player, Enemy& enemy)
 
 
 	
-	Sleep(1500);
+	system("pause");
 
 }
 
@@ -444,41 +448,44 @@ void Battle::Fight(Character& player, Enemy& enemy)
 			std::cout << " Атака (A)      Меню персонажа (I)      Меню(Q)" << std::endl;
 		}
 		UserInput = input_registration.Click_tracking(UserInput);
+
+		if (UserInput == 'I' || UserInput == 'i')
+		{
+			//Menu_Character(player);
+			std::cout << " Нет функционала" << std::endl;
+			system("pause");
+		}
+		else if (UserInput == 'A' || UserInput == 'a')
+		{
+			Attack(player, enemy);
+		}
+		else if (UserInput == 'R' || UserInput == 'r')
+		{
+			Escape(player);
+		}
+		else if (UserInput == 'Q' || UserInput == 'q')
+		{
+
+		}
+
+		if (player._PlayerAttributes.P_Hp <= 0)
+		{
+			player._PlayerAttributes.P_Hp = 0;
+			PlayerDie = true;
+			Step = 0;
+			Loss();
+		}
+		else if (enemy.Enemy_Attrbutes.enamyHp <= 0)
+		{
+			enemy.Enemy_Attrbutes.enamyHp = 0;
+			EnemyDie = true;
+			Step = 0;
+			Victory();
+		}
 	}
 
-	if (UserInput == 'I' || UserInput == 'i')
-	{
-		//Menu_Character(player);
-	}
-	else if (UserInput == 'A' || UserInput == 'a')
-	{
-		Attack(player, enemy);
-	}
-	else if (UserInput == 'R' || UserInput == 'r')
-	{
-		Escape(player);
-	}
-	else if (UserInput == 'Q' || UserInput == 'q')
-	{
-		
-	}
-
-	Sleep(500);
-
-	if (player._PlayerAttributes.P_Hp <= 0)
-	{
-		player._PlayerAttributes.P_Hp = 0;
-		PlayerDie = true;
-		Step = 0;
-		Loss();
-	}
-	else if (enemy.Enemy_Attrbutes.enamyHp <= 0)
-	{
-		enemy.Enemy_Attrbutes.enamyHp = 0;
-		EnemyDie = true;
-		Step = 0;
-		Victory();
-	}
+	
+	
 }
 
 void Battle::Attack(Character& player, Enemy& enemy)

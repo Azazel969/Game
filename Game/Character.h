@@ -8,7 +8,7 @@ struct PlayerInventory
 {
 	int many = 0;/// <summary>Деньги</summary>
 
-	// размер инвентaря
+	// размер инвентаря
 	static constexpr int inventoryPage = 4; // страница
 	static constexpr int width = 10; // ширина
 	static constexpr int height = 10; // высота
@@ -22,7 +22,7 @@ struct PlayerInventory
 	/// <summary>
 	/// Номер вещи в слоте инвентаря
 	/// </summary>
-	int namberItem;
+	int numberItem;
 
 	/// <summary>
 	/// Количество вещей в слоте инвентаря
@@ -30,7 +30,7 @@ struct PlayerInventory
 	int quantityItem;
 
 	/// <summary>
-	/// Страница инвентаря (зелья, броня, oружие, бижутерия)
+	/// Страница инвентаря (зелья, броня, оружие, бижутерия)
 	/// </summary>
 	int page;
 };
@@ -115,7 +115,7 @@ struct Position
 struct StorageAttributesg
 {
 	// добавленние эталонных атрибутов
-	void Add_standart_param();
+	void Add_standard_param();
 
 	int St_Hp;
 	int St_Mana;
@@ -140,7 +140,7 @@ struct SystemParam
 	bool Alert = false;
 
 	/// <summary>
-	/// игара загружается из сохранения
+	/// игра загружается из сохранения
 	/// </summary>
 	bool Load_save = false;
 
@@ -160,7 +160,7 @@ struct SystemParam
 /// </summary>
 struct PlayerAttributes
 {
-	// основные харки
+	// основные характеристики
 	std::string name_Character = "DEF";// ник
 	std::string name_Class;
 	int P_Levl;
@@ -172,7 +172,7 @@ struct PlayerAttributes
 	int P_avoid; // уклонение
 	int P_stamina; // выносливость
 
-	// доп. харки
+	// доп. характеристики
 	int P_Expenditure_Attack; // расход выносливости при атаке
 	int P_Expenditure_Escape; // расход выносливости при побеге
 
@@ -295,21 +295,21 @@ public:
 	void Move(int direction);
 
 	// Создание инвентаря по одному из вариантов
-	void CreateInventiry(int Option);
+	void CreateInventory(int Option);
 	
 	// Функция инвентаря
 	void Inventory();
 
 	//Вывод наименования предметов по их номеру
-	void OutNameItem(int namberItem);
+	void OutNameItem(int numberItem);
 
 	// Добавление предметов в инвентарь
-	void InItemsInventory(int namberItem = 0, int quantity = 0, int page = 0);
+	void InItemsInventory(int numberItem = 0, int quantity = 0, int page = 0);
 
 	/// <summary>
 	/// Вывод предметов из инвентаря
 	/// </summary>
-	void OutItemsInventory(int namberItem);
+	void OutItemsInventory(int numberItem);
 
 public:
 	 

@@ -724,8 +724,8 @@ void Game::Player_initialization(Character& player, Character& tempCharacter, Ma
 		player = tempCharacter;
 		isGameplayStarted = true;
 	}
-	player.CreateInventiry(1);
-	player._PlayerAttributes._SystemParam._StorageAttributes.Add_standart_param();
+	player.CreateInventory(1);
+	player._PlayerAttributes._SystemParam._StorageAttributes.Add_standard_param();
 	map.InsertPlayerIntoMap(player);
 	tempCharacter.~Character();
 }
@@ -1199,12 +1199,14 @@ void Actions::Options_actions(bool BL_Drop_Item, int Stamina, bool Alert, bool O
 		std::cout << " Вы слишком устали для путешествий" << std::endl;
 
 		No_travel = true;
+		Travel = false;
 	}
 	else
 	{
 		std::cout << " Путешествовать (Т)" << std::endl;
 
 		Travel = true;
+		No_travel = false;
 	}
 
 	//////////////////  4
@@ -1489,7 +1491,7 @@ void Game::GameMenu()
 					system("CLS");
 					std::cout << "*** inventory ***" << std::endl;
 					
-					player.CreateInventiry(1);
+					player.CreateInventory(1);
 
 					UserInput = ' ';	
 
@@ -1627,7 +1629,7 @@ void Game::GameMenu()
 		player.WindowPlayer();
 		
 		// инвентарь
-		player.CreateInventiry(1);
+		player.CreateInventory(1);
 		player.Inventory(NumberItem, quantity, page);
 		player.InItemsInventory(NumberItem, quantity, page);
 

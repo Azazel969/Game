@@ -76,7 +76,7 @@ private:
 //	int quantity[inventoryPage][width][height];
 //
 //	// номер предмета в инвентаре
-//	int namberItem;
+//	int numberItem;
 //
 //	// количество предмета определенного номера
 //	int quantity;

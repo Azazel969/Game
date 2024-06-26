@@ -124,6 +124,7 @@ void Character::Player_Windows()
 		std::cout << "\n *** Характеристики ***" << std::endl;
 
 		std::cout << std::endl;
+		std::cout << " Деньги: " << _PlayerAttributes._Inventory.many << std::endl;
 		std::cout << " Уровень: " << _PlayerAttributes.P_Levl << std::endl;
 		std::cout << " Класс: " << _PlayerAttributes.name_Class << std::endl;
 		std::cout << std::endl;
@@ -154,7 +155,8 @@ void Character::Player_Windows()
 		if (In == 'S' || In == 's')
 		{
 			//////////
-			std::cout << " Нет функционала" << std::endl;
+			std::cout << " Нет функционала (добавление  выносливости)" << std::endl;
+			_PlayerAttributes.P_stamina = +10;
 			system("pause");
 			//////////
 		}
@@ -242,7 +244,7 @@ bool Character::Get_File_save(bool save)
 	return _PlayerAttributes._SystemParam.Load_save;
 }
 
-void Character::CreateInventiry(int Option)  
+void Character::CreateInventory(int Option)  
 {
 
 	if (Option == 0)// ресет
@@ -291,7 +293,7 @@ void Character::CreateInventiry(int Option)
 			////////////////////////////////////////////////////////////
 			Sleep(200);
 			srand(time(0) + i);
-			_PlayerAttributes._Inventory.namberItem = 1 + (rand() % 400);
+			_PlayerAttributes._Inventory.numberItem = 1 + (rand() % 400);
 			Sleep(200);
 			srand(time(0) + i + 4);
 			_PlayerAttributes._Inventory.quantityItem = 1 + (rand() % 100);
@@ -316,7 +318,7 @@ void Character::CreateInventiry(int Option)
 					{
 						for (int c = 0; c < _PlayerAttributes._Inventory.height; c++)
 						{
-							if (_PlayerAttributes._Inventory.inventory[a][b][c] == _PlayerAttributes._Inventory.namberItem)
+							if (_PlayerAttributes._Inventory.inventory[a][b][c] == _PlayerAttributes._Inventory.numberItem)
 							{
 								_PlayerAttributes._Inventory.quantityItem = _PlayerAttributes._Inventory.quantityItem + _PlayerAttributes._Inventory.quantity[a][b][c];
 
@@ -328,7 +330,7 @@ void Character::CreateInventiry(int Option)
 							}
 							else if (_PlayerAttributes._Inventory.inventory[a][b][c] == 0 )
 							{
-								_PlayerAttributes._Inventory.inventory[a][b][c] = _PlayerAttributes._Inventory.namberItem;
+								_PlayerAttributes._Inventory.inventory[a][b][c] = _PlayerAttributes._Inventory.numberItem;
 
 								_PlayerAttributes._Inventory.quantity[a][b][c] = _PlayerAttributes._Inventory.quantityItem;
 
@@ -369,11 +371,11 @@ void Character::CreateInventiry(int Option)
 	}
 }   
 
-void Character::OutNameItem(int namberItem)
+void Character::OutNameItem(int numberItem)
 {
 	// зелья(001-099), броня(101-199), оружие(201-299), бижутерия(301-399)
 
-	switch (namberItem)
+	switch (numberItem)
 	{
 	case 1:
 	{
@@ -413,7 +415,7 @@ void Character::OutNameItem(int namberItem)
 	break;
 	case 5:
 	{
-		Item_attr.NameItem = " Зелье невидемости (маленькое) ";
+		Item_attr.NameItem = " Зелье невидимости (маленькое) ";
 		Item_attr.NumberItem = 5;
 		Item_attr.NameNumberItem = " (№5)";
 		Item_attr.Int_Rare = 1;
@@ -467,7 +469,7 @@ void Character::OutNameItem(int namberItem)
 	break;
 	case 11:
 	{
-		Item_attr.NameItem = " Зелье невидемости (среднее) ";
+		Item_attr.NameItem = " Зелье невидимости (среднее) ";
 		Item_attr.NumberItem = 11;
 		Item_attr.NameNumberItem = " (№11)";
 		Item_attr.Int_Rare = 2;
@@ -521,7 +523,7 @@ void Character::OutNameItem(int namberItem)
 	break;
 	case 17:
 	{
-		Item_attr.NameItem = " Зелье невидемости (большое) ";
+		Item_attr.NameItem = " Зелье невидимости (большое) ";
 		Item_attr.NumberItem = 17;
 		Item_attr.NameNumberItem = " (№17)";
 		Item_attr.Int_Rare = 3;
@@ -539,7 +541,7 @@ void Character::OutNameItem(int namberItem)
 	break;
 	case 101:
 	{
-		Item_attr.NameItem = " Броня кальчужная ";// броня 
+		Item_attr.NameItem = " Броня кольчужная ";// броня 
 		Item_attr.NumberItem = 101;
 		Item_attr.NameNumberItem = " (№101)"; 
 		Item_attr.Int_Rare = 2;
@@ -647,7 +649,7 @@ void Character::OutNameItem(int namberItem)
 	break;
 	case 113:
 	{
-		Item_attr.NameItem = " Кожанная броня ";
+		Item_attr.NameItem = " Кожаная броня ";
 		Item_attr.NumberItem = 113;
 		Item_attr.NameNumberItem = " (№113)";
 		Item_attr.Int_Rare = 1;
@@ -710,7 +712,7 @@ void Character::OutNameItem(int namberItem)
 	break;
 	case 206:
 	{
-		Item_attr.NameItem = " Камень силы(кристализированныя мана) ";
+		Item_attr.NameItem = " Камень силы (кристаллизованная мана) ";
 		Item_attr.NumberItem = 206;
 		Item_attr.NameNumberItem = " (№206)";
 		Item_attr.Int_Rare = 2;
@@ -832,11 +834,11 @@ void Character::OutNameItem(int namberItem)
 	}
 }	
 
-void Character::InItemsInventory(int namberItem, int quantity, int page)
+void Character::InItemsInventory(int numberItem, int quantity, int page)
 {
 	/*if (page == 10)
 	{
-		namberItem = _PlayerAttributes._InventoryS.namberItem;
+		numberItem = _PlayerAttributes._InventoryS.numberItem;
 
 		quantity = _PlayerAttributes._InventoryS.quantity;
 	}*/
@@ -844,21 +846,21 @@ void Character::InItemsInventory(int namberItem, int quantity, int page)
 	bool Inventory = false;
 	
 
-	if (namberItem < 100)
+	if (numberItem < 100)
 	{
 		page = 0; // зелья
 	}
-	else if (namberItem > 100 && namberItem < 200)
+	else if (numberItem > 100 && numberItem < 200)
 	{
 		page = 1; // броня
 	}
-	else if (namberItem > 200 && namberItem < 300)
+	else if (numberItem > 200 && numberItem < 300)
 	{
 		page = 2; // оружие
 	}
-	else if (namberItem > 300 && namberItem < 400)
+	else if (numberItem > 300 && numberItem < 400)
 	{
-		page = 3; // бижутеря
+		page = 3; // бижутерия
 	}
 
 	for (int a = 0; a < _PlayerAttributes._Inventory.inventoryPage; a++)
@@ -869,7 +871,7 @@ void Character::InItemsInventory(int namberItem, int quantity, int page)
 			{
 				for (int c = 0; c < _PlayerAttributes._Inventory.height; c++)
 				{
-					if (_PlayerAttributes._Inventory.inventory[a][b][c] == namberItem)
+					if (_PlayerAttributes._Inventory.inventory[a][b][c] == numberItem)
 					{
 						quantity = quantity + _PlayerAttributes._Inventory.quantity[a][b][c];
 
@@ -881,7 +883,7 @@ void Character::InItemsInventory(int namberItem, int quantity, int page)
 					}
 					else if (_PlayerAttributes._Inventory.inventory[a][b][c] == 0)
 					{
-						_PlayerAttributes._Inventory.inventory[a][b][c] = namberItem;
+						_PlayerAttributes._Inventory.inventory[a][b][c] = numberItem;
 
 						_PlayerAttributes._Inventory.quantity[a][b][c] = quantity;
 
@@ -907,17 +909,17 @@ void Character::InItemsInventory(int namberItem, int quantity, int page)
 	}
 }
 
-void Character::OutItemsInventory(int namberItem)
+void Character::OutItemsInventory(int numberItem)
 {
 	char in = ' ';
 	int Out = 0;
 	bool Raning = true;
 	
-	if (namberItem < 7)
+	if (numberItem < 7)
 	{
 		_PlayerAttributes._Inventory.page = 0;
 	}
-	else if (namberItem > 6)
+	else if (numberItem > 6)
 	{
 		_PlayerAttributes._Inventory.page = 1;
 	}
@@ -932,7 +934,7 @@ void Character::OutItemsInventory(int namberItem)
 				{
 					for (int c = 0; c < _PlayerAttributes._Inventory.height; c++)
 					{
-						if (_PlayerAttributes._Inventory.inventory[a][b][c] == namberItem)
+						if (_PlayerAttributes._Inventory.inventory[a][b][c] == numberItem)
 						{
 							OutNameItem(_PlayerAttributes._Inventory.inventory[a][b][c]);
 							std::cout << " Выбранный предмет: "; std::cout << Item_attr.NameItem << std::endl;
@@ -965,7 +967,7 @@ void Character::OutItemsInventory(int namberItem)
 											std::cout << " Предметов осталось: " << _PlayerAttributes._Inventory.quantity[a][b][c] << " шт." << std::endl;
 										}
 										
-										Item_attr.NumberItem = namberItem;
+										Item_attr.NumberItem = numberItem;
 										Item_attr.quantity = _PlayerAttributes._Inventory.quantityItem;
 										Item_attr.InHand = true;
 
@@ -1066,7 +1068,7 @@ void Character::Inventory()
 					std::cout << " # ";
 					std::cout << " Предмет - ";
 					std::cout << Item_attr.NameItem<<"|";
-					std::cout << "  Клас редкости: " << Item_attr.Name_Rare_Item<<" |";
+					std::cout << "  Класс редкости: " << Item_attr.Name_Rare_Item<<" |";
 					std::cout << "  Количество - ";
 					if (_PlayerAttributes._Inventory.quantity[a][b][c] < 100)
 					{
@@ -1091,7 +1093,7 @@ void Character::Inventory()
 	}
 }
 
-void StorageAttributesg::Add_standart_param()
+void StorageAttributesg::Add_standard_param()
 {
 
 }
