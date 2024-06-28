@@ -94,14 +94,14 @@ void Battle::Loss()
 
 void Battle::battle(Character& player, Enemy& enemy)
 {
-	if (enemy.allEnamy == 0)
-	{
-		enemy.CreateEnemy(enemy);
-	}
-
 	system("CLS");
 
 	char UserInput = NULL;
+
+	if (quantityEnemies == 0)
+	{
+		quantityEnemies = enemy.GetAllEnemy(enemy);
+	}
 
 	PlayerDie = false;
 	EnemyDie = false;
@@ -112,12 +112,12 @@ void Battle::battle(Character& player, Enemy& enemy)
 		if (!player._PlayerAttributes._SystemParam.Overview)
 		{
 			srand(time(NULL));
-			int odds = 1 + rand() % 7;
+			int odds = 1 + rand() % 10;
 
 			if (odds == 1)
 			{
 				srand(time(NULL));
-				numberEnemy = 1 + rand() % 10;
+				numberEnemy = 1 + rand() % quantityEnemies;
 				enemy.Enemy_Attrbutes.enamyNumber = numberEnemy;
 				////////////////////////////
 				//номера генерируемых врагов в зависимости от текущего мира
@@ -127,10 +127,17 @@ void Battle::battle(Character& player, Enemy& enemy)
 
 
 				////////////////////////////
+				if (numberEnemy > quantityEnemies)
+				{
+					start_fight = false;
+					break;
+				}
+				else
+				{
+					enemy.CreateEnemy(enemy);
 
-				enemy.CreateEnemy(enemy);
-
-				FightNotOverview(player, enemy);
+					FightNotOverview(player, enemy);
+				}
 			}
 			else
 			{
@@ -140,7 +147,7 @@ void Battle::battle(Character& player, Enemy& enemy)
 		else
 		{
 			srand(time(NULL));
-			numberEnemy = 1 + rand() % enemy.allEnamy+6;
+			numberEnemy = 1 + rand() % quantityEnemies+6;
 			enemy.Enemy_Attrbutes.enamyNumber = numberEnemy;
 
 			////////////////////////////
@@ -149,12 +156,10 @@ void Battle::battle(Character& player, Enemy& enemy)
 
 
 
-
 			////////////////////////////
 
-			if (numberEnemy > enemy.allEnamy)
+			if (numberEnemy > quantityEnemies)
 			{
-				std::cout << " исправить подщет enamy" << std::endl;
 				start_fight = false;
 				break;
 			}
@@ -162,7 +167,7 @@ void Battle::battle(Character& player, Enemy& enemy)
 			{
 				enemy.CreateEnemy(enemy);
 
-				FidhtOverview(player, enemy);
+				FightOverview(player, enemy);
 			}
 		}
 
@@ -174,7 +179,7 @@ void Battle::battle(Character& player, Enemy& enemy)
 				system("CLS");
 
 				if (PlayerDie || EnemyDie)
-				{
+				{ 
 					Bl_Fight = false;
 					start_fight = false;
 					if (EnemyDie)
@@ -212,20 +217,20 @@ void Battle::battle(Character& player, Enemy& enemy)
 					runaway = true;
 				}
 
-				if (detecred_enemy && !detecred_player)
+				if (detected_enemy && !detected_player)
 				{
-					crit_enemy = true;
-					crit_player = false;
+					critic_enemy = true;
+					critic_player = false;
 				}
-				else if (detecred_player && !detecred_enemy)
+				else if (detected_player && !detected_enemy)
 				{
-					crit_player = true;
-					crit_enemy = false;
+					critic_player = true;
+					critic_enemy = false;
 				}
-				else if (detecred_enemy && detecred_player)
+				else if (detected_enemy && detected_player)
 				{
-					crit_player = false;
-					crit_enemy = false;
+					critic_player = false;
+					critic_enemy = false;
 				}
 
 				Fight(player, enemy);
@@ -238,7 +243,7 @@ void Battle::battle(Character& player, Enemy& enemy)
 	battleRan = true;
 }
 
-void Battle::FidhtOverview(Character& player, Enemy& enemy)
+void Battle::FightOverview(Character& player, Enemy& enemy)
 {
 	char UserInput = NULL;
 
@@ -246,18 +251,18 @@ void Battle::FidhtOverview(Character& player, Enemy& enemy)
 
 	if (odds > 5 && odds <= 10)
 	{
-		detecred_player = true;
-		detecred_enemy = false;
+		detected_player = true;
+		detected_enemy = false;
 		enemy_aggression = true;
 	}
 	else if (odds > 0 && odds < 5)
 	{
-		detecred_enemy = true;
-		detecred_player = false;
+		detected_enemy = true;
+		detected_player = false;
 		enemy_aggression = false;
 	}
 
-	if (detecred_enemy)
+	if (detected_enemy)
 	{
 		std::cout << " В свете факела показался некий силуэт" << std::endl;
 		std::cout << std::endl;
@@ -274,8 +279,8 @@ void Battle::FidhtOverview(Character& player, Enemy& enemy)
 				std::cout << " Существом оказался: " << std::endl;
 				enemy.PrintEnemyStats();
 				std::cout << std::endl;
-				detecred_player = false;
-				detecred_enemy = true;
+				detected_player = false;
+				detected_enemy = true;
 				start_fight = true;
 
 				std::cout << " Хотите начать сражение(F) или попробуете уйти(G)?" << std::endl;
@@ -293,13 +298,13 @@ void Battle::FidhtOverview(Character& player, Enemy& enemy)
 					{
 						std::cout << " Вы попытались, но "<< enemy.Enemy_Attrbutes.enemyName <<" нападает на вас" << std::endl;
 						enemy_aggression = true;
-						detecred_player = true;
+						detected_player = true;
 					}
 					else if (odds > 0 && odds <= 10)
 					{
 						std::cout << " Решив не рисковать вы отправились дальше " << std::endl;
-						detecred_enemy = false;
-						detecred_player = false;
+						detected_enemy = false;
+						detected_player = false;
 						enemy_aggression = false;
 						start_fight = false;
 					}
@@ -324,16 +329,16 @@ void Battle::FidhtOverview(Character& player, Enemy& enemy)
 				{
 					std::cout << " Но к сожалению вы ушли не достаточно далеко" << std::endl;
 					std::cout << enemy.Enemy_Attrbutes.enemyName << " вас заметил, но вы этого не знаете..." << std::endl;
-					detecred_player = true;
-					detecred_enemy = false;
+					detected_player = true;
+					detected_enemy = false;
 					enemy_aggression = true;
 					start_fight = true;
 				}
 				else if (odds > 1 && odds <= 5)
 				{
 					std::cout << " Ведь вам удалось уйти не привлекая внимания" << std::endl;
-					detecred_enemy = false;
-					detecred_player = false;
+					detected_enemy = false;
+					detected_player = false;
 					enemy_aggression = false;
 					start_fight = false;
 				}
@@ -342,16 +347,16 @@ void Battle::FidhtOverview(Character& player, Enemy& enemy)
 		else if (UserInput == 'G' || UserInput == 'g')
 		{
 			std::cout << " Решив не рисковать вы отправились дальше " << std::endl;
-			detecred_enemy = false;
-			detecred_player = false;
+			detected_enemy = false;
+			detected_player = false;
 			enemy_aggression = false;
 			start_fight = false;
 		}
 		else
 		{
 			std::cout << " Совершив глупость, вы привлекли его внимание" << std::endl;
-			detecred_player = true;
-			detecred_enemy = true;
+			detected_player = true;
+			detected_enemy = true;
 			enemy_aggression = true;
 			start_fight = true;
 		}
@@ -370,15 +375,15 @@ void Battle::FightNotOverview(Character& player, Enemy& enemy)
 
 	if (odds > 5 && odds <= 10)
 	{
-		detecred_player = true;
-		detecred_enemy = false;
+		detected_player = true;
+		detected_enemy = false;
 		enemy_aggression = true;
 		start_fight = true;
 	}
 	else if (odds > 0 && odds < 5)
 	{
-		detecred_enemy = true;
-		detecred_player = false;
+		detected_enemy = true;
+		detected_player = false;
 		enemy_aggression = false;
 		start_fight = true;
 	}
@@ -531,7 +536,7 @@ void Battle::Attack(Character& player, Enemy& enemy)
 		}
 	}
 
-	if (crit_enemy) // удар со спины (+ к урону: ???)
+	if (critic_enemy) // удар со спины (+ к урону: ???)
 	{
 		if (player._PlayerAttributes._PlayerSet.bl_Weapon_mod)
 		{
@@ -543,9 +548,9 @@ void Battle::Attack(Character& player, Enemy& enemy)
 		}
 		Damage_Enemy *= 2;
 		enemy.Enemy_Attrbutes.enamyHp = enemy.Enemy_Attrbutes.enamyHp - Damage_Enemy;
-		detecred_player = true;
+		detected_player = true;
 	}
-	else if (crit_player)
+	else if (critic_player)
 	{
 		if (player._PlayerAttributes._PlayerSet.bl_Weapon_mod)
 		{
@@ -557,7 +562,7 @@ void Battle::Attack(Character& player, Enemy& enemy)
 		}
 		Damage_Player *= 2;
 		player._PlayerAttributes.P_Hp = player._PlayerAttributes.P_Hp - Damage_Player;
-		detecred_enemy = true;
+		detected_enemy = true;
 	}
 	else // стандартная боевка
 	{

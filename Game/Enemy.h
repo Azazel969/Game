@@ -121,13 +121,25 @@ public:
 	///////////////////////////////////////////
 	EnemyAttribute Enemy_Attrbutes;
 
-	int allEnamy = 0;
+	/// <summary>
+	/// возвращает количество врагов 
+	/// </summary>
+	/// <returns></returns>
+	int GetAllEnemy(Enemy& enemy);
 	
 	//бестиарий
 	bool bestiaryRan = false;
 
 private:
-	// тестовый прогон для подсчета enamy
+	/// <summary>
+	/// тестовый прогон для подсчета enamy
+	/// </summary>
 	bool test = true;
+
+	/// <summary>
+	/// общее количество врагов
+	/// </summary>
+	int allEnemy = 0;
+
 
 };

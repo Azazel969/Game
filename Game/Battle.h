@@ -24,9 +24,9 @@ public:
 private:
 
 	/// <summary>
-	/// Ќачало бо€ с заженным факелом
+	/// Ќачало бо€ с зажжЄнным факелом
 	/// </summary>
-	void FidhtOverview(Character& player, Enemy& enemy);
+	void FightOverview(Character& player, Enemy& enemy);
 
 	/// <summary>
 	/// Ќачало бо€ в темноте
@@ -56,7 +56,7 @@ private:
 	void Loss();
 
 	// расчет опыта
-	double Calculation_Xp();
+	//double Calculation_Xp();
 
 
 
@@ -66,7 +66,7 @@ private:
 public:
 
 	// переменна€ бо€ (пока true функци€ Battle будет выполн€тс€)
-	bool battleRan;
+	bool battleRan = false;
 
 	bool PlayerDie = false;
 	bool EnemyDie = false;
@@ -94,25 +94,31 @@ private:
 	/// <summary>
 	/// начало бо€ 
 	/// </summary>
-	bool start_fight;
+	bool start_fight = false;
 
 	/// <summary>
 	/// true - вас заметили
 	/// </summary>
-	bool detecred_player;
+	bool detected_player = false;
 
 	/// <summary>
 	/// true - вы заметили enemy
 	/// </summary>
-	bool detecred_enemy;
+	bool detected_enemy = false;
 
 	/// <summary>
 	/// агро 
 	/// </summary>
 	bool enemy_aggression = false;
 
-	
-	int numberEnemy;
+	/// <summary>
+	/// общее количество врагов
+	/// </summary>
+	int quantityEnemies = 0;
+	/// <summary>
+	/// пор€дковый номер врага
+	/// </summary>
+	int numberEnemy = 0;
 	/// <summary>
 	/// дроп с моба
 	/// </summary>
@@ -130,12 +136,12 @@ private:
 	/// <summary>
 	/// критический урон по мобу
 	/// </summary>
-	bool crit_enemy = false;
+	bool critic_enemy = false;
 
 	/// <summary>
 	/// критический урон по игроку
 	/// </summary>
-	bool crit_player = false;
+	bool critic_player = false;
 
 	/// <summary>
 	/// ѕобег с пол€ бо€

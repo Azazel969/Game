@@ -15,7 +15,19 @@ Enemy::Enemy(const EnemyAttribute& Enemy_Attrbutes)
 
 void Enemy::CreateEnemy(Enemy& enemy)
 {
-	int NumberEnemy = enemy.Enemy_Attrbutes.enamyNumber;
+	
+	int NumberEnemy = 0;
+	
+	if (test)
+	{
+		NumberEnemy = 1;
+	}
+	else
+	{
+		NumberEnemy = enemy.Enemy_Attrbutes.enamyNumber;
+		test = false;
+	}
+	
 	int element = 0;
 	int i = 1;
 
@@ -84,7 +96,7 @@ void Enemy::CreateEnemy(Enemy& enemy)
 				if (!enemy.bestiaryRan) enemy = Elemental;
 				else std::cout << std::endl;
 			}
-			else enemy.allEnamy += 4;
+			else enemy.allEnemy += 4;
 		}
 			break;
 		case 2:
@@ -114,7 +126,7 @@ void Enemy::CreateEnemy(Enemy& enemy)
 				if (!enemy.bestiaryRan) enemy = Arachnid;
 				else std::cout << std::endl;
 			}
-			else enemy.allEnamy++;
+			else enemy.allEnemy++;
 		}
 			break;
 		case 3:
@@ -144,7 +156,7 @@ void Enemy::CreateEnemy(Enemy& enemy)
 				if (!enemy.bestiaryRan) enemy = Goblin_Warrior;
 				else std::cout << std::endl;
 			}
-			else enemy.allEnamy++;
+			else enemy.allEnemy++;
 		}
 			break;
 		case 4:
@@ -174,7 +186,7 @@ void Enemy::CreateEnemy(Enemy& enemy)
 				if (!enemy.bestiaryRan) enemy = Goblin_Shaman;
 				else std::cout << std::endl;
 			}
-			else enemy.allEnamy++;
+			else enemy.allEnemy++;
 		}
 			break;
 		case 5:
@@ -204,7 +216,7 @@ void Enemy::CreateEnemy(Enemy& enemy)
 				if (!enemy.bestiaryRan) enemy = Banshee;
 				else std::cout << std::endl;
 			}
-			else enemy.allEnamy++;
+			else enemy.allEnemy++;
 		}
 			break;
 		case 6:
@@ -234,7 +246,7 @@ void Enemy::CreateEnemy(Enemy& enemy)
 				if (!enemy.bestiaryRan) enemy = Draugr;
 				else std::cout << std::endl;
 			}
-			else enemy.allEnamy++;
+			else enemy.allEnemy++;
 		}
 			break;
 		case 7:
@@ -264,7 +276,7 @@ void Enemy::CreateEnemy(Enemy& enemy)
 				if (!enemy.bestiaryRan) enemy = Slime;
 				else std::cout << std::endl;
 			}
-			else enemy.allEnamy++;
+			else enemy.allEnemy++;
 		}
 			break;
 		case 8:
@@ -294,7 +306,7 @@ void Enemy::CreateEnemy(Enemy& enemy)
 				if (!enemy.bestiaryRan) enemy = Satanist;
 				else std::cout << std::endl;
 			}
-			else enemy.allEnamy++;
+			else enemy.allEnemy++;
 
 		}
 			break;
@@ -325,7 +337,7 @@ void Enemy::CreateEnemy(Enemy& enemy)
 				if (enemy.bestiaryRan) enemy = Cave_bear;
 				else std::cout << std::endl;
 			}
-			else enemy.allEnamy++;
+			else enemy.allEnemy++;
 		}
 			break;
 		case 10:
@@ -355,7 +367,7 @@ void Enemy::CreateEnemy(Enemy& enemy)
 				if (!enemy.bestiaryRan) enemy = Spirit_Gaia;
 				else std::cout << std::endl;
 			}
-			else enemy.allEnamy++;
+			else enemy.allEnemy++;
 		}
 			break;
 		case 11:
@@ -385,7 +397,7 @@ void Enemy::CreateEnemy(Enemy& enemy)
 				if (!enemy.bestiaryRan) enemy = Lich;
 				else std::cout << std::endl;
 			}
-			else enemy.allEnamy++;
+			else enemy.allEnemy++;
 				
 		}
 			break;
@@ -416,7 +428,7 @@ void Enemy::CreateEnemy(Enemy& enemy)
 				if (!enemy.bestiaryRan) enemy = Chthonic_golem;
 				else std::cout << std::endl;
 			}
-			else enemy.allEnamy++;
+			else enemy.allEnemy++;
 		}
 			break;
 		case 13:
@@ -446,7 +458,7 @@ void Enemy::CreateEnemy(Enemy& enemy)
 				if (!enemy.bestiaryRan) enemy = Goblin_king;
 				else std::cout << std::endl;
 			}
-			else enemy.allEnamy++;
+			else enemy.allEnemy++;
 		}
 			break;
 		default:
@@ -1021,6 +1033,7 @@ void Enemy::ÑhoiceDrop(Character& player)
 
 	player._PlayerAttributes._Inventory.many = player._PlayerAttributes._Inventory.many + 10;
 
+	//player._PlayerAttributes._Inventory.many = 
 
 
 
@@ -1430,7 +1443,7 @@ void Enemy::MobDrops(Enemy& enemy, Character& player)
 		//Enemy_Attrbutes.Enemy_Drop.Name_Possible_G1_Drops_1 = player.Item_attr.NameItem;
 		//Enemy_Attrbutes.Enemy_Drop.Number_Possible_G1_Drop_1 = player.Item_attr.NumberItem;
 	}
-
+	     
 	*/
 
 	ÑhoiceDrop(player);
@@ -1447,7 +1460,12 @@ EnemyDrops Enemy::GetEnemyDrops() const
 	return Enemy_Attrbutes.Enemy_Drop;
 }
 
+int Enemy::GetAllEnemy(Enemy& enemy)
+{
+	CreateEnemy(enemy);
 
+	return allEnemy;
+}
 
 
 
