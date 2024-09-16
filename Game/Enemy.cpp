@@ -1031,7 +1031,7 @@ void Enemy::ÑhoiceDrop(Character& player)
 	//äðîï
 	//äðîï
 
-	player._PlayerAttributes._Inventory.many = player._PlayerAttributes._Inventory.many + 10;
+	player._PlayerAttributes._Inventory.many = Enemy_Attrbutes.Enemy_Drop.Quantity_drop_gold;
 
 	//player._PlayerAttributes._Inventory.many = 
 

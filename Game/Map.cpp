@@ -1050,7 +1050,7 @@ void Map::MapOverview(int PlayerX, int PlayerY)
 	CordinateOpenAreaY = SavePlayerY; CordinateOpenAreaX = SavePlayerX;
 }
 
-char Map::Simbol()
+char Map::Symbol()
 {
 	bool settings = true;
 	while (settings)

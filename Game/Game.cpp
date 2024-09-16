@@ -520,7 +520,7 @@ void Game::Settings()
 		case '2':
 			system("CLS");
 
-			map.Simbol();
+			map.Symbol();
 
 			break;
 
@@ -1455,7 +1455,7 @@ void Game::GameMenu()
 				switch (UserInput)
 				{
 				case '1':
-					map.Simbol();
+					map.Symbol();
 					break;
 
 				case '2':

@@ -2,9 +2,9 @@
 #include <iostream>
 #include "Character.h"
 
-struct Map_simbol
+struct Map_symbol
 {
-	enum Simbol_int { 
+	enum Symbol_int { 
 		/// <summary>
 		/// Стена, числовое значение в массиве: 0
 		/// </summary>
@@ -41,7 +41,7 @@ struct Map_simbol
 		Save_int = 9
 	};
 
-	enum Simbol {
+	enum Symbol {
 		/// <summary>
 		/// Стена, символ: #
 		/// </summary>
@@ -81,7 +81,7 @@ struct Map_simbol
 	/*
 
 	// символ стены -
-	char Simbol_wall = '#';
+	char Symbol_wall = '#';
 	// символ стены (цифра 0)
 	int const Int_Simbol_wall = 0;
 
@@ -101,7 +101,7 @@ struct Map_simbol
 	int const Int_Simbol_light_area = 4;
 
 	// символ врага-
-	char Simbol_enemy = 'E';
+	char Symbol_enemy = 'E';
 	// символ врага (цифра 4)
 	int const Int_Simbol_enemy = 5;
 
@@ -141,7 +141,7 @@ struct Village
 	bool Return_village = false;
 
 	/// <summary>
-	/// Область поселения в которой находится игок (0 - за пределами поселения, 1 - ворота, 2 - центральный район)
+	/// Область поселения в которой находится игрок (0 - за пределами поселения, 1 - ворота, 2 - центральный район)
 	/// </summary>
 	int Village_region = 1;
 
@@ -287,7 +287,7 @@ struct World
 	/// <summary>
 	/// структура с информацией о символах и их представлении
 	/// </summary>
-	Map_simbol attr_simbol;
+	Map_symbol attr_simbol;
 
 
 	Drop Drop_attr;
@@ -337,7 +337,7 @@ public:
 	/// настройка отображения символов
 	/// </summary>
 	/// <returns> возвращаемый параметр: char </returns>
-	char Simbol();
+	char Symbol();
 
 private:
 
